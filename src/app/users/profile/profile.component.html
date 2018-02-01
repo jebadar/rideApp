@@ -1,0 +1,152 @@
+<!-- Banner Section Start-->
+<div class="search-results" data-infinite-scroll [infiniteScrollDistance]="1" [infiniteScrollThrottle]="300" (scrolled)="onScroll()">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm-8">
+				<div class="vehicle-heading">
+					<h3>Booking List</h3>
+				</div>
+				<div class="clear"></div>
+				<div class="booking-list-box" *ngFor="let booking of bookingList;let counter=index">
+					<div class="row row-margin">
+						<div class="col-sm-4">
+							<div class="booking-list-heading">
+								<h2>{{booking.car?.name}}</h2>
+								<h3>${{booking.total_charges}}</h3>
+							</div>
+							<div class="row">
+								<div class="col-sm-6">
+									<img class="suit-case-icon" [src]="assetsUrl + 'images/suit-case-icon.png'" alt="">
+									<div class="vehicle-heading">
+										<h6>{{booking.no_of_suitcases}}</h6>
+									</div>
+								</div>
+								<div class="col-sm-6">
+									<img class="suit-case-icon" [src]="assetsUrl + 'images/passenger-icon.png'" alt="">
+									<div class="vehicle-heading">
+										<h6>{{booking.no_of_passengers}}</h6>
+									</div>
+								</div>
+							</div>
+
+							<div class="clear"></div>
+							<div class="date-heading">
+								<h2>Date
+									<span>{{booking.time*1000 | date }}</span>
+								</h2>
+							</div>
+							<div class="date-heading">
+								<h2>Time
+									<span>{{booking.time*1000 | date:'hh:mm a'}}</span>
+								</h2>
+							</div>
+								<span class="badge" *ngIf="booking.confirm === '1'" [ngClass]="checkTimeofBooking(booking.time)" >
+									<span *ngIf="checkTimeofBooking(booking.time) === 'badge-danger'">Past Booking</span>
+									<span  style="color: #108876;" *ngIf="checkTimeofBooking(booking.time) === 'badge-light'">Future Booking</span>
+								</span>
+								<span *ngIf="booking.confirm === '4'" class="badge badge-danger">
+									<span style="color: white;">Canceled</span>
+								</span>
+						</div>
+						<div class="col-sm-8">
+							<div class="row">
+								<div class="col-sm-9 booking-col">
+									<div class="input-group s-margin">
+										<span class="input-group-addon passenger-padding" id="basic-addon1s">
+											<img [src]="assetsUrl + 'images/booking-list-location-icon.png'" alt="">
+										</span>
+										<div class="booking-list-date-box">
+											<div class="booking-list-heading">
+												<h6 *ngIf="booking.bookingroutes.length > 0">{{booking.bookingroutes[0].from}}</h6>
+												<h6 *ngIf="booking.bookingroutes.length < 1">No location</h6>
+											</div>
+											<div class="clear"></div>
+										</div>
+									</div>
+								</div>
+								<div *ngIf="booking.confirm !== '4'" class="col-sm-3">
+									<button type="submit" (click)="editBooking(counter)" class="booking-edit-button">Edit</button>
+								</div>
+								<div class="col-sm-9 booking-col">
+									<div class="input-group s-margin">
+										<span class="input-group-addon passenger-padding" id="basic-addon1a">
+											<img [src]="assetsUrl + 'images/booking-list-location-icon.png'" alt="">
+										</span>
+										<div class="booking-list-date-box">
+											<div class="booking-list-heading">
+												<h6 *ngIf="booking.bookingroutes.length > 0">{{booking.bookingroutes[booking.bookingroutes.length-1].to}}</h6>
+												<h6 *ngIf="booking.bookingroutes.length < 1">No location</h6>
+											</div>
+											<div class="clear"></div>
+										</div>
+									</div>
+								</div>
+								<div *ngIf="booking.confirm !== '4'" class="col-sm-3">
+									<button type="submit" (click)="cancelPopup(booking.id)" class="booking-cancel-button">Cancel</button>
+								</div>
+							</div>
+							<div class="clear"></div>
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>
+				<div *ngIf="loading" class="booking-list-box">
+					<app-loader-component></app-loader-component>
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="vehicle-heading">
+					<h3>Profile</h3>
+				</div>
+				<div class="clear"></div>
+				<div class="my-profile-bg">
+					<div class="my-profile-heading">
+						<div class="text-center">
+							<h2>{{user.name}}</h2>
+							<!-- <h3>Chauffeur customer</h3> -->
+						</div>
+					</div>
+				</div>
+				<div class="contact-info-box">
+					<div class="my-profile-heading">
+						<h4>Contact information</h4>
+					</div>
+				</div>
+				<div class="booking-edit-button" style="margin-top: 15px;
+				padding: 20px;cursor:pointer;" (click)="edit()">
+					<div class="my-profile-heading">
+						<h4>Edit</h4>
+					</div>
+				</div>
+
+				<div class="input-group set-margin" style=" margin-top: 10px;">
+					<span class="input-group-addon passenger-padding my-profile-radius" id="basic-addon1q">
+						<img [src]="assetsUrl + 'images/my-pro-mail-icon.png'" alt="">
+					</span>
+					<div class="my-profile-data-box">
+						<div class="booking-list-heading">
+							<h6 class="heading">{{user.email}}</h6>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<div class="input-group set-margin" style=" margin-top: 10px;">
+					<span style="padding: 6px 8px !important;" class="input-group-addon passenger-padding my-profile-radius" id="basic-addon1h">
+						<img [src]="assetsUrl + 'images/my-pro-mobile-icon.png'" alt="">
+					</span>
+					<div class="my-profile-data-box">
+						<div class="booking-list-heading">
+							<h6 class="heading">{{user.cell_no}}</h6>
+						</div>
+						<div class="clear"></div>
+					</div>
+				</div>
+				<button type="submit" (click)="signout()" class="my-profile-signout-btn">Signout</button>
+			</div>
+		</div>
+
+	</div>
+	<!-- Profile And Booking Section End-->
+</div>
+<app-edit-component *ngIf="enableEdit" [close]="closeEdit"></app-edit-component>
+<app-confirm-popup-component *ngIf="enableConfirm" [close]="closeConfirm" [confirm]="cancelBooking"></app-confirm-popup-component>

@@ -1,0 +1,460 @@
+<!-- Banner Section Start-->
+<div class="booking-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="booking-banner-heading">
+          <h2>
+            <span>Vehicle &</span> Passengers</h2>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+            its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
+            to using 'Content here, content here', making it look like readable English.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="quote-banner-border"></div>
+<!-- Banner Section End-->
+
+<app-quote-navigate-component [currentStage]="'passengers'"></app-quote-navigate-component>
+
+<!-- Cars And Passengers Section Start-->
+<div #scrollToDiv class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="vehicle-heading">
+        <h3>Select Vehicle</h3>
+      </div>
+      <div class="clear"></div>
+      <div class="scrollbar" id="style-3">
+        <div class="vehicle-box" *ngIf="loadCars === true">
+          <app-loader-component></app-loader-component>
+        </div>
+        <div [class.vehicle-box]="car.selected != true" *ngFor="let car of cars;let counter=index" (click)="selectCar(counter)" [class.step-active-carBox]="car.selected === true">
+          <div class="row row-margin">
+            <div class="col-sm-6">
+              <div class="vehicle-heading">
+                <h4>{{car.name}}</h4>
+                <h5>${{car.cartype.basic_charge}}.00</h5>
+              </div>
+              <img class="suit-case-icon" [src]="assetsUrl+'images/suit-case-icon.png'" alt="" />
+              <div class="vehicle-heading">
+                <h6>{{car.cartype.no_of_passengers}}</h6>
+              </div>
+              <img class="suit-case-icon" [src]="assetsUrl+'images/passenger-icon.png'" alt="" />
+              <div class="vehicle-heading">
+                <h6>{{car.cartype.no_of_suitCases}}</h6>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="text-center">
+                <a>
+                  <img class="vehicle-image" [src]="assetsUrl+'images/v-car-image.png'" alt="" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <div class="col-sm-8">
+      <div class="vehicle-heading">
+        <h3>Passenger Details</h3>
+      </div>
+      <div class="clear"></div>
+      <div class="passenger-box">
+        <div class="row row-margin">
+          <div class="col-sm-12">
+            <div class="passenger-heading">
+              <h2>Select date & time</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <h3>Departure date</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="bookingForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon1">
+                <img [src]="assetsUrl+'images/date0icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" style="width: 73%;" placeholder="Date" aria-describedby="basic-addon1" type="date" name="dateDeparture"
+                formControlName="dateDeparture">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <h3>Departure Time</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="bookingForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon10">
+                <img [src]="assetsUrl+'images/clock-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" style="width: 73%;" placeholder="Time" aria-describedby="basic-addon1" type="time" name="timeDeparture"
+                formControlName="timeDeparture">
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="passenger-border-line"></div>
+        <div class="row row-margin">
+          <div class="col-sm-12">
+            <div class="passenger-heading">
+              <h2>Personal Information</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <h3>Title</h3>
+            </div>
+            <div class="input-group set-margin">
+              <span class="input-group-addon passenger-padding" id="basic-addon15">
+                <img [src]="assetsUrl+'images/mr-icon.png'" alt="" />
+              </span>
+              <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default dropdown-toggle drop-margin" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Mr
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#">Mrs</a>
+                  </li>
+                  <li>
+                    <a href="#">Dr</a>
+                  </li>
+                  <li>
+                    <a href="#">Sir</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <h3>Name</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="registerForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon13">
+                <img [src]="assetsUrl+'images/name-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Name" aria-describedby="basic-addon1" [class.disable-input-register]="registerRequire == false"
+                [readonly]="registerRequire == false" type="text" name="name" formControlName="name">
+            </div>
+
+          </div>
+          <div class="col-sm-6" *ngIf="registerRequire == false && user.surname === ''">
+            <div class="passenger-heading">
+              <h3>Surname</h3>
+            </div>
+            <div class="input-group set-margin">
+              <span class="input-group-addon passenger-padding" id="basic-addon137">
+                <img [src]="assetsUrl+'images/mr-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Surname" aria-describedby="basic-addon1" [(ngModel)]="user.surname" [class.disable-input-register]="registerRequire == false"
+                [readonly]="registerRequire == false" type="text">
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="registerRequire == false && user.contact_no === ''">
+            <div class="passenger-heading">
+              <h3>Phone Number</h3>
+            </div>
+            <div class="input-group set-margin">
+              <span class="input-group-addon passenger-padding" id="basic-addon130">
+                <img [src]="assetsUrl+'images/phn-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Phone" aria-describedby="basic-addon1" [class.disable-input-register]="registerRequire == false"
+                [readonly]="registerRequire == false" [(ngModel)]="user.contact_no" type="number">
+            </div>
+
+          </div>
+          <div class="col-sm-12">
+            <div class="passenger-heading">
+              <h3>Email Address</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="registerForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon1375">
+                <img [src]="assetsUrl+'images/emal-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Email" style="text-transform: none" aria-describedby="basic-addon1" [class.disable-input-register]="registerRequire == false"
+                [readonly]="registerRequire == false" type="text" name="email" formControlName="email">
+            </div>
+          </div>
+          <div class="col-sm-6" *ngIf="registerRequire == true">
+            <div class="passenger-heading">
+              <h3>Password</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="registerForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon130">
+                <img [src]="assetsUrl+'images/phn-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Password" aria-describedby="basic-addon1" formControlName="password" type="password">
+            </div>
+
+          </div>
+          <div class="col-sm-6" *ngIf="registerRequire == true">
+            <div class="passenger-heading">
+              <h3>Confirm password</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="registerForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon130">
+                <img [src]="assetsUrl+'images/phn-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Confirm password" aria-describedby="basic-addon1" type="password" formControlName="confirmPassword">
+            </div>
+
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <h3>Booking For</h3>
+            </div>
+            <div class="input-group set-margin">
+              <div style="background-color: #fff; width: 100%; padding-top: 10px; padding-bottom: 7px; padding-left: 20px; padding-right: 20px; border-radius: 4px; border: 1px solid #dbdde4;">
+                <input type="checkbox" id="test1" [checked]="checkboxArr.self" (change)="onChange('self')" />
+                <label class="form-control-2" style="border:none !important;height:auto !important;" for="test1">My Self</label>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <h3>Booking For</h3>
+            </div>
+            <div class="input-group set-margin">
+              <div style="background-color: #fff; width: 100%; padding-top: 10px; padding-bottom: 7px; padding-left: 20px; padding-right: 20px; border-radius: 4px; border: 1px solid #dbdde4;">
+                <input type="checkbox" id="test2" [checked]="checkboxArr.someone" (change)="onChange('someone')" />
+                <label class="form-control-2" style="border:none !important;height:auto !important;" for="test2">Someone else</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="passenger-border-line"></div>
+        <div class="row row-margin" *ngIf="someoneElseCheck">
+          <div class="col-sm-12">
+            <div class="passenger-heading">
+              <h2>Person Detail</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <h3>Name</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="someoneElseForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon159">
+                <img [src]="assetsUrl+'images/passrngers-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Name" name="name" formControlName="name" aria-describedby="basic-addon1" type="text">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <h3>Phone Number</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="someoneElseForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon1590">
+                <img [src]="assetsUrl+'images/chiled-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Phone" name="phone" formControlName="phone" aria-describedby="basic-addon1" type="number">
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="passenger-heading">
+              <h3>Email Address</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="someoneElseForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon1375">
+                <img [src]="assetsUrl+'images/emal-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="EMAIL" style="text-transform: none" aria-describedby="basic-addon1" type="email"
+                name="email" formControlName="email">
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="passenger-border-line"></div>
+        <div *ngIf="selectedCarCounter != null" class="row row-margin">
+          <div class="col-sm-12">
+            <div class="passenger-heading">
+              <h2>Seats Detail</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <h3>Passengers</h3>
+            </div>
+            <div class="input-group set-margin form-control-2" style="padding-left: 0px;padding-right: 0px;border: none;">
+              <span class="input-group-addon passenger-padding" id="basic-addon159">
+                <img [src]="assetsUrl+'images/passrngers-icon.png'" alt="" />
+              </span>
+              <div class="btn-group" dropdown role="group">
+                <button type="button" dropdownToggle class="form-control-1 dropdown-toggle" style="text-align:left;height: auto;
+                border-radius: 0px;
+                margin-top: 0px;border-bottom: 0px !important;
+                color: unset !important;background-color: #fff;" placeholder="Passengers" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  {{RouteObjInherit.no_of_passengers}}
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" *dropdownMenu>
+                  <li *ngFor="let i of Arr(selectedCar.cartype.no_of_passengers).fill(1);let counter=index" (click)="selectCarDetail('no_of_passengers', counter+1)">
+                    <a>{{counter+1}}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <h3>Child Detail</h3>
+            </div>
+            <div class="input-group set-margin form-control-2" style="padding-left: 0px;padding-right: 0px;border: none;">
+              <span class="input-group-addon passenger-padding" id="basic-addon1590">
+                <img [src]="assetsUrl+'images/chiled-icon.png'" alt="" />
+              </span>
+              <div class="btn-group" dropdown role="group">
+                <button type="button" dropdownToggle class="form-control-1 dropdown-toggle" style="text-align:left;height: auto;
+                border-radius: 0px;
+                margin-top: 0px;border-bottom: 0px !important;
+                color: unset !important;background-color: #fff;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{RouteObjInherit.no_of_childseats}}
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" *dropdownMenu>
+                  <li (click)="selectCarDetail('no_of_childs', 1)">
+                    <a>1</a>
+                  </li>
+                  <li (click)="selectCarDetail('no_of_childs', 2)">
+                    <a>2</a>
+                  </li>
+                  <li (click)="selectCarDetail('no_of_childs', 3)">
+                    <a>3</a>
+                  </li>
+                  <li (click)="selectCarDetail('no_of_childs', 4)">
+                    <a>4</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <h3>Suit Cases</h3>
+            </div>
+            <div class="input-group set-margin" style="padding-left: 0px;padding-right: 0px;border: none;">
+              <span class="input-group-addon passenger-padding" id="basic-addon166">
+                <img [src]="assetsUrl+'images/suitcases-icon.png'" alt="" />
+              </span>
+              <div class="btn-group" dropdown role="group">
+                <button type="button" dropdownToggle class="form-control-1 dropdown-toggle" style="text-align:left;height: auto;
+                border-radius: 0px;
+                margin-top: 0px;border-bottom: 0px !important;
+                color: unset !important;background-color: #fff;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{RouteObjInherit.no_of_suitcases}}
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" *dropdownMenu>
+                  <li *ngFor="let i of Arr(selectedCar.cartype.no_of_suitcases).fill(1);let counter=index" (click)="selectCarDetail('no_of_suitCases', counter+1)">
+                    <a>{{counter+1}}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cars And Passengers Section End-->
+
+<!-- Journey Section Start-->
+<div class="journey-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="journey-heading">
+          <h2>Journey Details</h2>
+        </div>
+      </div>
+      <div class="col-sm-5 offset-sm-1" [formGroup]="bookingForm">
+        <div class="journey-from-box">
+          <div class="journey-heading">
+            <h2>
+              <span>Journey From</span>
+            </h2>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="journey-from-address-box">
+          <div class="journey-heading">
+            <h3>Pickup from
+              <span>{{RouteObjInherit.bookingroutes[0].from}}</span>
+            </h3>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="journey-heading">
+          <h4>Full address</h4>
+        </div>
+        <textarea class="form-control-area" placeholder="Address" name="full_address_from" formControlName="full_address_from" rows="3"></textarea>
+      </div>
+      <div class="col-sm-5" [formGroup]="bookingForm">
+        <div class="journey-from-box">
+          <div class="journey-heading">
+            <h2>
+              <span>Journey To</span>
+            </h2>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="journey-from-address-box">
+          <div class="journey-heading">
+            <h3>Drop off to
+              <span>{{RouteObjInherit.bookingroutes[RouteObjInherit.bookingroutes.length-1].to}}</span>
+            </h3>
+          </div>
+          <div class="clear"></div>
+        </div>
+        <div class="journey-heading">
+          <h4>Full address</h4>
+        </div>
+        <textarea class="form-control-area" name="full_address_to" formControlName="full_address_to" placeholder="Address" rows="3"></textarea>
+      </div>
+      <div class="col-sm-10 offset-sm-1">
+        <div class="form-check" (click)="onChange('terms')">
+          <input type="checkbox" id="test1" [checked]="RouteObjInherit.terms === true" />
+          <label class="form-check-label">
+            <div class="journey-heading">
+              <h5>Please check the box to accept the
+                <span>terms and conditions.</span>
+              </h5>
+            </div>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Journey Section End-->
+
+<!-- Next Button Section Start-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-right">
+        <button (click)="back()" type="submit" class="quote-next-btn">Back</button>
+        <button *ngIf="!loading" type="submit" (click)="next()" class="quote-next-btn">Next</button>
+        <button *ngIf="loading" type="submit" style="background-color:white !important;" class="quote-next-btn">
+          <app-loader-component [width]="20"></app-loader-component>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Next Button Section End-->
+<app-login *ngIf="enableLogin" [close]="closeLogin" [belongs_to]="'main'" [setUser]="setUser" [skipCheck]="skipCheck"></app-login>

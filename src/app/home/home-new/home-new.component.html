@@ -1,0 +1,374 @@
+<!-- Fleet Section Start-->
+<div class="fleet-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="fleet-heading">
+          <h2>OUR FLEET</h2>
+          <div class="title-block1"></div>
+          <p>Choose from a wide selection of boats ranging from luxury motor yachts to classic sailing yachts, we have every
+            type of boat available to meet your needs. </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-8 offset-sm-2">
+      <!-- Nav tabs -->
+      <ul class="nav nav-tabs" role="tablist">
+        <li *ngFor="let car of cars;let counter=index" class="nav-item">
+          <a class="nav-link " data-toggle="tab" [class.active]="status === counter" (click)="changeStatus(counter)" role="tab">{{car.name}}</a>
+        </li>
+      </ul>
+    </div>
+    <div class="clear"></div>
+    <!-- Tab panes -->
+    <div class="col-sm-12">
+      <div class="tab-content">
+        <div class="tab-pane active" id="home" role="tabpanel">
+          <div class="demo">
+            <div id="testimonial-slider" class="owl-carousel">
+              <carousel [(activeSlide)]="status">
+                <slide *ngFor="let car of cars;let count=index">
+                  <div class="testimonial">
+                    <div class="row">
+                      <div style="min-height:307.55px;" class="col-sm-4">
+                        <img *ngIf="car.media.length > 0" class="fleet-slider-image" [src]="car.media[0].name" alt="" />
+                        <img *ngIf="car.media.length < 1" class="fleet-slider-image" [src]="assetsUrl + 'images/fleet-slider-1.png'" alt="" />                          
+                      </div>
+                      <div style="min-height:307.55px;" class="col-sm-8">
+                        <img *ngIf="car.media.length > 1" class="fleet-slider-image-second" [src]="car.media[1].name" alt="" />
+                        <img *ngIf="car.media.length < 2" class="fleet-slider-image-second fleet-margin-adjust" [src]="assetsUrl + 'images/fleet-slider-car.jpg'" alt="" />                              
+                      </div>
+                    </div>
+                  </div>
+                </slide>
+                <!-- <slide [class.active]="status === 2">
+                  <div class="testimonial">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        2
+                        <a href="#">
+                          <img class="fleet-slider-image" [src]="assetsUrl + 'images/fleet-slider-1.png'" alt="" />
+                        </a>
+                      </div>
+                      <div class="col-sm-8">
+                        <a href="#">
+                          <img class="fleet-slider-image fleet-margin-adjust" [src]="assetsUrl + 'images/fleet-slider-car.jpg'" alt="" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </slide>
+                <slide [class.active]="status === 3">
+                  <div class="testimonial">
+                    <div class="row">
+                      <div class="col-sm-4">
+                        <a href="#">
+                          3
+                          <img class="fleet-slider-image" [src]="assetsUrl + 'images/fleet-slider-1.png'" alt="" />
+                        </a>
+                      </div>
+                      <div class="col-sm-8">
+                        <a href="#">
+                          <img class="fleet-slider-image fleet-margin-adjust" [src]="assetsUrl + 'images/fleet-slider-car.jpg'" alt="" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </slide> -->
+              </carousel>
+            </div>
+            <div *ngIf="loadCars" class="owl-carousel">
+              <app-loader-component></app-loader-component>
+            </div>
+          </div>
+        </div>
+        <div class="tab-pane" id="profile" role="tabpanel">
+          Slider
+        </div>
+        <div class="tab-pane" id="messages" role="tabpanel">Slider</div>
+        <div class="tab-pane" id="settings" role="tabpanel">Slider</div>
+        <div class="tab-pane" id="1" role="tabpanel">Slider</div>
+        <div class="tab-pane" id="2" role="tabpanel">Slider</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Fleet Section End-->
+
+<!-- Services Section Start-->
+<div class="pricing-background">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="pricing-heading-holder">
+          <h2>Chauffeur has a wide array of pricing options to meet all of your needs</h2>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="text-center">
+          <button type="submit" class="btn pricing-btn">View Pricing</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Services Section End-->
+
+<!-- Benefits Section Start-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="benefits-heading">
+        <h2>Your Benefits</h2>
+        <p>There are many variations of passages of Lorem Ipsum available.</p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="text-center">
+        <a href="#">
+          <img class="benefits-icon" [src]="assetsUrl + 'images/benefits-icon-1.jpg'" alt="" />
+        </a>
+      </div>
+      <div class="benefits-heading">
+        <h3>Complimentary wait time</h3>
+        <p>There are many variations of passages of Lorem Ipsum available, but</p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="text-center">
+        <a href="#">
+          <img class="benefits-icon" [src]="assetsUrl + 'images/benefits-icon-2.jpg'" alt="" />
+        </a>
+      </div>
+      <div class="benefits-heading">
+        <h3>All-inclusive rates</h3>
+        <p>There are many variations of passages of Lorem Ipsum available, but</p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="text-center">
+        <a href="#">
+          <img class="benefits-icon" [src]="assetsUrl + 'images/benefits-icon-3.jpg'" alt="" />
+        </a>
+      </div>
+      <div class="benefits-heading">
+        <h3>Professional drivers</h3>
+        <p>There are many variations of passages of Lorem Ipsum available, but</p>
+      </div>
+    </div>
+    <div class="col-sm-3">
+      <div class="text-center">
+        <a href="#">
+          <img class="benefits-icon" [src]="assetsUrl + 'images/benefits-icon-4.jpg'" alt="" />
+        </a>
+      </div>
+      <div class="benefits-heading">
+        <h3>Free cancellation</h3>
+        <p>There are many variations of passages of Lorem Ipsum available, but</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Benefits Section End-->
+
+<!-- About Section Start-->
+<div class="about-margin-holder">
+  <div class="row row-margin">
+    <div class="col-sm-6 about-padding">
+      <div class="about-bg">
+        <div class="about-heading">
+          <h2>DOWNLOAD OUR NEW MOBILE APP</h2>
+          <div class="clear"></div>
+          <div class="title-block2"></div>
+          <p>In tellus massa, viverra a tincidunt sed, posuere eu nisi. Nulla semper dolor et urna dignissim dignissim. Suspendisse
+            posuere nec eros quis dapibus. Etiam a purus sed quam pellentesque imperdiet. Curabitur sit amet mauris porta
+            justo mattis mattis at ac lacus sed aliquam pellentesque consectetur.</p>
+        </div>
+        <button type="submit" class="about-button">Learn More</button>
+      </div>
+    </div>
+    <div class="col-sm-6 about-padding">
+      <a href="#">
+        <img class="about-video" [src]="assetsUrl + 'images/about-video.jpg'" alt="" />
+      </a>
+    </div>
+  </div>
+</div>
+<!-- About Section End-->
+
+<!-- News Section Start-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h5>NEWS & GOSSIPS</h5>
+      <div class="title-block1"></div>
+    </div>
+    <div class="col-sm-4">
+      <div class="news-box">
+        <a href="#">
+          <img class="news-image" [src]="assetsUrl + 'images/news-image-1.jpg'" alt="" />
+        </a>
+        <div class="col-sm-12">
+          <div class="news-heading">
+            <h3>Travel to the Most Popular Airport in the UK</h3>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="news-border"></div>
+        <div class="row row-margin">
+          <div class="col-sm-6">
+            <img class="calender-icon" [src]="assetsUrl + 'images/celender-icon.png'" alt="" />
+            <div class="news-heading">
+              <h2>February 1, 2017</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <img class="calender-icon" [src]="assetsUrl + 'images/comment-icon.png'" alt="" />
+            <div class="news-heading">
+              <h2>2 Comments</h2>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="news-border"></div>
+        <div class="col-sm-12">
+          <div class="news-heading">
+            <p>Sed suscipit pretium venenatis. Praesent ultrices convallis augue, in tincidunt nibh hendrerit sit amet. </p>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="news-box">
+        <a href="#">
+          <img class="news-image" [src]="assetsUrl + 'images/news-image-2.jpg'" alt="" />
+        </a>
+        <div class="col-sm-12">
+          <div class="news-heading">
+            <h3>Travel to London City</h3>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="news-border"></div>
+        <div class="row row-margin">
+          <div class="col-sm-6">
+            <img class="calender-icon" [src]="assetsUrl + 'images/celender-icon.png'" alt="" />
+            <div class="news-heading">
+              <h2>February 1, 2017</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <img class="calender-icon" [src]="assetsUrl + 'images/comment-icon.png'" alt="" />
+            <div class="news-heading">
+              <h2>2 Comments</h2>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="news-border"></div>
+        <div class="col-sm-12">
+          <div class="news-heading">
+            <p>Sed suscipit pretium venenatis. Praesent ultrices convallis augue, in tincidunt nibh hendrerit sit amet. </p>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="news-box">
+        <a href="#">
+          <img class="news-image" [src]="assetsUrl + 'images/news-image-3.jpg'" alt="" />
+        </a>
+        <div class="col-sm-12">
+          <div class="news-heading">
+            <h3>Please Give A Warm Welcome To Our New Driver!</h3>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="news-border"></div>
+        <div class="row row-margin">
+          <div class="col-sm-6">
+            <img class="calender-icon" [src]="assetsUrl + 'images/celender-icon.png'" alt="" />
+            <div class="news-heading">
+              <h2>February 1, 2017</h2>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <img class="calender-icon" [src]="assetsUrl + 'images/comment-icon.png'" alt="" />
+            <div class="news-heading">
+              <h2>2 Comments</h2>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="news-border"></div>
+        <div class="col-sm-12">
+          <div class="news-heading">
+            <p>Sed suscipit pretium venenatis. Praesent ultrices convallis augue, in tincidunt nibh hendrerit sit amet. </p>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- News Section End-->
+
+<!-- Travel Section Start-->
+<div class="travel-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="text-center">
+          <div class="travel-heading">
+            <h2>Book Online Today
+              <br>And Travel In Comfort</h2>
+            <div class="clear"></div>
+            <div class="title-block1"></div>
+            <p>Call Us 0118 3111 211 or Email info@website.com</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-12">
+        <div class="text-center">
+          <button type="submit" class="travel-button">Online Booking</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Travel Section End-->
+
+<!-- Gallery And Testimonial Section Start-->
+<div class="testimonial-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 offset-sm-3">
+        <h5>Testimonial</h5>
+        <div class="clear"></div>
+        <div class="title-block1"></div>
+        <div class="tes-bg">
+          <p class="description">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam enim diam, tempus vel ultricies viverra, luctus in elit.
+            Aliquam tempus blandit velit, in pharetra ex volutpat a. Cras eu augue ac nisl tempor commodo.
+          </p>
+          <div class="text-center">
+            <img [src]="assetsUrl + 'images/testimonial-1.png'" alt="" />
+          </div>
+          <div class="text-center">
+            <div class="tes">
+              <h5>Mike Jones-Luxury Sedan</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Gallery And Testimonial Section End-->

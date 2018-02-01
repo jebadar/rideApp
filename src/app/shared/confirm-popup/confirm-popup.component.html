@@ -1,0 +1,24 @@
+<div class="container modal_wrapper">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3" (click)="ignoreClick($event)">
+      <div class="login-bg">
+        <div class="login-box">
+          <h1>Cancel Booking</h1>
+        </div>
+        <div *ngIf="!loading" class="col-12">
+          <label for="exampleInputEmail1">
+            <h2>Are you sure you want to cancel the booking?</h2>
+          </label>
+
+          <button (click)="yes()" class="btn btn-primary">Confirm</button>
+          <button (click)="closeBox()" class="btn btn-primary">Cancel</button>
+
+        </div>
+        <div *ngIf="loading" class="col-12">
+          <app-loader-component></app-loader-component>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

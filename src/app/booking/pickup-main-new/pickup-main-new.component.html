@@ -1,0 +1,219 @@
+<!-- Banner Section Start-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="banner-distance-box overlay" *ngIf="loading" style="position: absolute;
+            top: 0;
+            z-index: 1;
+            background-color: rgba(0,0,0,0.5);
+            min-height:100%">
+          <div>
+            <app-loader-component></app-loader-component>
+          </div>
+        </div>
+        <div class="banner-distance-box">
+          <div class="col-sm-6 offset-sm-3">
+            <div class="text-center">
+              <h1>get a quote & book online</h1>
+            </div>
+          </div>
+          <div class="row positionRelative ">
+            <div class="col-sm-6">
+              <div class="row">
+                <div id="type1full" *ngFor="let type1 of typesObj; let counter=index" (click)="initLocation(1, counter)" class="col width d-none d-sm-block cursor">
+                  <div class="text-center">
+                    <img class="banner-icons" *ngIf="type1.media.length > 0" [src]="type1.media[0].name" alt="" />
+                    <img class="banner-icons" *ngIf="type1.media.length < 1" [src]="assetsUrl + 'images/banner-icon-2.png'" alt="" />
+                    <div class="banner-icons-heading">
+                      <h2 [class.title-block1]="type1.id === first_loc.id" [class.transperent]="type1.id !== first_loc.id">{{type1.description}}</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="type1small col-sm-12">
+                  <h4>Pickup Location Type</h4>
+                </div>
+                <div class="type1small col-sm-12">
+                  <div class="btn-group" role="group" dropdown>
+                    <button type="button" class="btn btn-default dropdown-toggle" dropdownToggle data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      <span *ngIf="first_loc.description === ''">Location Type</span>
+                      <span *ngIf="first_loc.description != ''">{{first_loc.description}}</span>
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" *dropdownMenu>
+                      <li *ngFor="let type1small of typesObj;let counter=index" (click)="initLocation(1,counter)">
+                        <a>{{type1small.description}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <h4>Pickup Location</h4>
+                </div>
+                <div class="col-sm-12">
+                  <div class="btn-group" dropdown role="group" *ngIf="first_loc.description.toLowerCase() !== 'postcode'">
+                    <button type="button" class="btn btn-default dropdown-toggle" aria-placeholder="Select any location" dropdownToggle data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <span *ngIf="reserveObj.from === ''">Select any location</span>
+                      <span *ngIf="reserveObj.from != ''">{{reserveObj.from.formatted_address}}</span>
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" *dropdownMenu>
+                      <li *ngIf="first_loc.length < 1">
+                        <a>Select Location Type</a>
+                      </li>
+                      <li *ngFor="let loc of first_loc.locations;let counter=index" (click)="selectLoc(1,counter)">
+                        <a>{{loc.name}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <app-auto-complete-component [key]="1" [setFunc]="set" *ngIf="first_loc.description.toLowerCase() === 'postcode'"></app-auto-complete-component>
+                </div>
+                <div class="col-sm-3">
+                  <div class="banner-icons-heading">
+                    <h4>Journey Type:</h4>
+                  </div>
+                </div>
+                <div class="col-sm-3 time-padding">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" (click)="setJourneyType('single_journey')" class="form-check-input" name="optionsRadios" id="optionsRadios1"
+                        value="option1"> One way
+                    </label>
+                  </div>
+                </div>
+                <div class="col-sm-3 time-padding">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" (click)="setJourneyType('return_journey')" class="form-check-input" name="optionsRadios" id="optionsRadios10"
+                        value="option1"> Return
+                    </label>
+                  </div>
+                </div>
+                <div class="col-sm-3 time-padding">
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="radio" (click)="setJourneyType('waiting_return_journey')" class="form-check-input" name="optionsRadios" id="optionsRadios11"
+                        value="option1"> Wait & Return
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="line">
+
+            </div>
+            <div class="col-sm-6">
+              <div class="row">
+                <div id="type2full" *ngFor="let type2 of typesObj; let counter=index" (click)="initLocation(2, counter)" class="col width d-none d-sm-block cursor">
+                  <div class="text-center">
+
+                    <img class="banner-icons" *ngIf="type2.media.length > 0" [src]="type2.media[0].name" alt="" />
+                    <img class="banner-icons" *ngIf="type2.media.length < 1" [src]="assetsUrl + 'images/banner-icon-2.png'" alt="" />
+
+                    <div class="banner-icons-heading">
+                      <!-- <h2>{{type2.description}}</h2> -->
+                      <h2 [class.title-block1]="type2.id === second_loc.id" [class.transperent]="type2.id !== second_loc.id">{{type2.description}}</h2>
+                    </div>
+                  </div>
+                </div>
+                <div class="type2small col-sm-12">
+                  <h4>Drop Off Location Type</h4>
+                </div>
+                <div class="type2small col-sm-12">
+                  <div class="btn-group" dropdown role="group">
+                    <button type="button" dropdownToggle class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                      <span *ngIf="second_loc.description == ''">Location Type</span>
+                      <span *ngIf="second_loc.description != ''">{{second_loc.description}}</span>
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" *dropdownMenu>
+                      <li *ngFor="let type2small of typesObj;let counter=index" (click)="initLocation(2,counter)">
+                        <a>{{type2small.description}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <h4>Drop Off Location</h4>
+                </div>
+                <div class="col-sm-12">
+                  <div class="btn-group" dropdown role="group" *ngIf="second_loc.description.toLowerCase() !== 'postcode'">
+                    <button type="button" class="btn btn-default dropdown-toggle" aria-placeholder="Select any location" dropdownToggle data-toggle="dropdown"
+                      aria-haspopup="true" aria-expanded="false">
+                      <span *ngIf="reserveObj.to === ''">Select any location</span>
+                      <span *ngIf="reserveObj.to != ''">{{reserveObj.to.formatted_address}}</span>
+                      <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" *dropdownMenu>
+                      <li>
+                        <a *ngIf="second_loc.length < 1">Select Location Type</a>
+                      </li>
+                      <li *ngFor="let loc of second_loc.locations;let counter=index" (click)="selectLoc(2,counter)">
+                        <a>{{loc.name}}</a>
+                      </li>
+                    </ul>
+                  </div>
+                  <app-auto-complete-component [key]="2" [setFunc]="set" *ngIf="second_loc.description.toLowerCase() === 'postcode'"></app-auto-complete-component>
+                </div>
+                <div class="col-sm-5">
+                  <div class="banner-icons-heading">
+                    <h4 class="padding-adjust">Booking Date & Time:</h4>
+                  </div>
+                  <input [(ngModel)]="_quoteData.date" class="form-control margin-adjust" [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+                  <owl-date-time #dt></owl-date-time>
+                </div>
+                <div *ngIf="_quoteData.return_trip === 'waiting_return_journey'" class="col-sm-3">
+                  <div class="banner-icons-heading">
+                    <h6  class="padding-adjust">Waiting Time:</h6>
+                  </div>
+                  <div class="col-sm-6 time-padding float-holder">
+                    <select class="form-control margin-adjust"  [(ngModel)]="_quoteData.wait_hour">
+                          <option [selected] value="">HH</option>  
+                        <option *ngFor="let i of Arr(24).fill(1);let counter=index" [value]="counter">{{counter}}</option>
+                        </select>
+                    </div> 
+                 <div class="col-sm-6 time-padding float-holder">
+                      <select class="form-control margin-adjust"  [(ngModel)]="_quoteData.wait_minutes">
+                          <option [selected] value=""><span>MM</span></option>  
+                          <option *ngFor="let i of Arr(60).fill(1);let counter=index" [value]="counter">{{counter}}</option>
+                      </select>
+                  </div>
+                </div>
+                  <div *ngIf="_quoteData.return_trip === 'return_journey'" class="col-sm-5">
+                    <div class="banner-icons-heading">
+                      <h4 class="padding-adjust">Return Date & Time:</h4>
+                    </div>
+                    <input [(ngModel)]="_quoteData.return_date" class="form-control margin-adjust" [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+                    <owl-date-time #dt></owl-date-time>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="text-center">
+              <button type="submit" (click)="reserveNow()" class="btn reserve-btn">Get a Quote</button>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+
+      </div>
+      <!-- <div class="row">  -->
+      <div class="clear"></div>
+
+
+      <!-- </div> -->
+    </div>
+    <div class="col-sm-12 marginTop">
+      <div class="banner-icons-heading">
+        <h3>30% CHEAPER THAN BLACK CAB TAXIS!</h3>
+        <h3>
+          <span>BOOK YOUR TAXI TODAY AND SAVE NOW</span>
+        </h3>
+      </div>
+    </div>
+  </div>
+  <!-- Banner Section End-->

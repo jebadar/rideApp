@@ -1,0 +1,1675 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+/*
+
+Workout Builder Pro
+
+*/
+
+/*-------- Body Style Start -------- */
+body
+{
+	font-family: 'Lato', sans-serif; font-size: 14px; background-color: white; 
+}
+/*-------- Body Style End -------- */
+
+/*-------- Heading Style Start -------- */
+h1
+{
+	font-size: 24px; color: white; text-transform: uppercase; font-weight: 900; line-height: 0px; text-align: center; letter-spacing: 2px;
+}
+h2
+{
+	font-size: 12px; color: #3f3f3f; text-transform: none; font-weight: normal; text-align: left; letter-spacing: 2px; float: left; margin: 0px; padding-top: 33px;
+}
+h3
+{
+	font-size: 10px; color: #3f3f3f; text-transform: none; font-weight: normal; text-align: left; letter-spacing: 2px; float: left; margin: 0px; padding-top: 5px;
+}
+h4
+{
+	font-size: 18px; color: #fff; text-transform: none; font-weight: bold; letter-spacing: 2px; padding-top: 15px;
+}
+h5
+{
+	font-size: 24px; color: #191919; text-transform: none; font-weight: normal; letter-spacing: 2px; text-align: center; padding-top: 30px;
+}
+h6
+{
+	font-size: 16px; color: #424242; text-transform: none; font-weight: normal; padding-top: 20px; letter-spacing: 2px; float: left;
+}
+a
+{
+	color: #1c1c1c;
+}
+p
+{
+	font-size: 14px; color: #3f3f3f; line-height: 30px; text-align: justify; font-weight: normal; padding-top: 15px;
+}
+/*-------- Heading Style End -------- */
+
+/*-------- Index Css Style Start -------- */
+.clear
+{
+	clear:both;
+}
+
+
+/*-------- Index Page Css Style Start -------- */
+
+/*-------- Top Information Section Css Style Start -------- */
+.border-bottom
+{
+	width: 100%; height: 1px; background-color: #e8e8e8; margin-top: 5px;
+}
+/*-------- Top Information Section Css Style End -------- */
+
+
+/*-------- Logo Section Css Style Start -------- */
+.logo
+{
+	max-width: 100%; margin-top: 20px;
+}
+.check-image
+{
+	float: left; margin-right: 5px; margin-top: 30px;
+}
+.online-booking-btn
+{
+	background-color: #108876; padding-left: 40px; padding-right: 40px; padding-top: 20px; padding-bottom: 20px; color: white; font-size: 16px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 50px; margin-top: 15px; letter-spacing: 2px; width: 100%;
+}
+.online-booking-btn:hover
+{
+	background-color: #1c1c1c; color: white;
+}
+/*-------- Logo Section Css Style End -------- */
+
+
+/*-------- Navigation Section Css Style Start -------- */
+.bg-light
+{
+	width: 100%; background-color: #1c1c1c !important; margin-top: 20px;
+}
+.navbar-light .navbar-nav .nav-link
+{
+	color: #fff; font-size: 16px; font-weight: normal; letter-spacing: 2px; padding-left: 50px; padding-right: 50px; padding-top: 20px; padding-bottom: 20px;
+}
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover
+{
+	color: white; background-color: #108876;
+}
+.navbar
+{
+	padding: 0px !important;
+}
+.row-margin
+{
+	margin: 0px;
+}
+.dropdown-toggle::after
+{
+	float: right; margin-top: .455em;
+}
+/*-------- Navigation Section Css Style End -------- */
+
+
+/*-------- Banner Section Css Style Start -------- */
+.banner
+{
+	width: 100%; background-image: url(../../../assets/images/home-banner-image.jpg); background-repeat: no-repeat; background-attachment: scroll; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding-top: 80px; padding-bottom: 50px; margin-top: -28px;
+}
+.banner-distance-box
+{
+	width: 100%; background-color: #1c1c1c;
+}
+.banner-distance-heading-box
+{
+	width: 100%; background-color: #108876; padding-top: 30px; padding-bottom: 30px; text-align: center;
+}
+.form-control
+{
+	height: 65px; border-radius: 0px; margin-top: 17px; color: #696969 !important; font-size: 12px; font-weight: normal; letter-spacing: 2px; border: 0px; text-transform: none;
+}
+.btn-group, .btn-group-vertical
+{
+	width: 100%;
+}
+.btn-group > .btn:first-child
+{
+	width: 100%; text-align: left; height: 50px; border-radius: 0px; margin-top: 10px; color: #b2b2b2; font-size: 12px; letter-spacing: 2px;
+}
+.btn .caret
+{
+	float: right; margin-top: -9px;
+}
+.dropdown-menu
+{
+	width: 100%; border-radius: 0px;
+}
+.dropdown-menu > li 
+{
+	border-bottom: 1px solid #e8e8e8 !important; line-height: 40px;
+}
+.dropdown-menu > li > a
+{
+	padding-left: 20px;
+}
+.reserve-btn
+{
+	background-color: #108876; padding-left: 50px; padding-right: 50px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 16px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 50px; margin-top: 30px; letter-spacing: 2px; margin-bottom: 30px;
+}
+.reserve-btn:hover
+{
+	background-color: #fff; color: #108876;
+}
+/*-------- Banner Section Css Style End -------- */
+
+
+/*-------- Fleet Section Css Style Start -------- */
+.fleet-heading p
+{
+	font-size: 14px; color: #3f3f3f; line-height: 30px; text-align: center; font-weight: normal; padding-top: 15px; letter-spacing: 2px;
+}
+.fleet-box
+{
+	width: 100%; border: 1px solid #e8e8e8; padding-top: 30px; padding-bottom: 30px; margin-top: 20px; margin-bottom: 30px;
+}
+.fleet-car-image
+{
+	max-width: 100%;
+}
+.fleet-border
+{
+	width: 100%; height: 1px; background-color: #e8e8e8; margin-top: 40px;
+}
+.fleet-price-btn
+{
+	background-color: #108876; padding-left: 20px; padding-right: 20px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 14px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 0px; letter-spacing: 2px; margin-top: -26px;
+}
+.fleet-price-btn:hover
+{
+	background-color: #1c1c1c; color: #fff;
+}
+.fleet-ture-icon
+{
+	float: left; margin-top: 20px; margin-right: 10px;
+}
+.fleet-icon-heading h2
+{
+	font-size: 14px; color: #424242; text-transform: none; font-weight: normal; padding-top: 21px; letter-spacing: 2px; float: left;
+}
+.service-border-line
+{
+	width: 100%; height: 1px; background-color: #f2f3f7; margin-top: 50px; margin-bottom: 50px;
+}
+/*-------- Fleet Section Css Style End -------- */
+
+
+/*-------- Services Section Css Style Start -------- */
+.padding
+{
+	padding-right: 0px;
+}
+.service-heading h2
+{
+	font-size: 24px; color: #191919; letter-spacing: 5px; padding: 0px; margin: 0px; width: 100%; text-align: center; padding-bottom: 50px;
+}
+.service-heading h3
+{
+	font-size: 18px; color: #108876; letter-spacing: 2px; padding: 0px; margin: 0px; width: 100%; padding-top: 55px; text-transform: uppercase;
+}
+.service-heading p
+{
+	font-size: 14px; color: #424242; letter-spacing: 2px; padding: 0px; margin: 0px; padding-top: 40px; padding-bottom: 40px;
+}
+.service-col-padding
+{
+	padding-left: 0px;
+}
+.service-icon
+{
+	margin-bottom: 50px;
+}
+/*-------- Services Section Css Style End -------- */
+
+
+/*-------- About Section Css Style Start -------- */
+.about-bg
+{
+	width: 100%; background-color: #1c1c1c; padding-top: 18px; padding-bottom: 19px; padding-left: 50px; padding-right: 50px;
+}
+.about-heading h2
+{
+	font-size: 24px; color: white; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; width: 100%;
+}
+.about-heading p
+{
+	font-size: 14px; color: white; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: justify; padding-top: 50px; padding-bottom: 30px; line-height: 40px;
+}
+.about-padding
+{
+	padding-left: 0px; padding-right: 0px;
+}
+.about-video
+{
+	width: 100%;
+}
+.about-button
+{
+	background-color: #108876; padding-left: 50px; padding-right: 50px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 14px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 50px; letter-spacing: 3px; margin-top: 0px; margin-bottom: 0px;
+}
+.about-button:hover
+{
+	background-color: #fff; color: #108876;
+}
+/*-------- About Section Css Style End -------- */
+
+
+/*-------- News Section Css Style Start -------- */
+.news-box
+{
+	width: 100%; border: 1px solid #e8e8e8; margin-top: 30px; padding-bottom: 10px;
+}
+.news-image
+{
+	width: 100%;
+}
+.news-heading h3
+{
+	font-size: 16px; color: #424242; letter-spacing: 2px; padding-top: 20px; line-height: 20px;
+}
+.news-heading h2
+{
+	font-size: 12px; color: #424242; letter-spacing: 2px; margin: 0px; padding: 0px; text-align: left; padding-top: 13px;
+}
+.news-heading p
+{
+	font-size: 14px; color: #424242; letter-spacing: 2px; text-align: justify;
+}
+.news-border
+{
+	width: 100%; height: 1px; background-color: #e8e8e8; margin-top: 15px;
+}
+.calender-icon
+{
+	float: left; margin-top: 10px; margin-right: 6px;
+}
+/*-------- News Section Css Style End -------- */
+
+
+/*-------- Travel Section Css Style Start -------- */
+.travel-bg
+{
+	width: 100%; background-image: url(../../../assets/images/travel-image.jpg); background-repeat: no-repeat; background-attachment: scroll; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding-top: 50px; padding-bottom: 50px; margin-top: 60px;
+}
+.travel-heading h2
+{
+	font-size: 30px; color: white; letter-spacing: 2px; font-weight: bold; line-height: 50px; width: 100%; text-align: center; padding-bottom: 40px;
+}
+.travel-heading p
+{
+	font-size: 14px; color: white; letter-spacing: 2px; font-weight: normal; text-align: center; padding-bottom: 30px;
+}
+/*-------- Travel Section Css Style End -------- */
+
+
+/*-------- GAllery Section Css Style Start -------- */
+.gallery-image
+{
+	width: 100%; margin-top: 30px;
+}
+/*-------- GAllery Section Css Style End -------- */
+
+
+/*-------- Footer Section Css Style Start -------- */
+.footer-bg
+{
+	width: 100%; background-color: #1c1c1c; padding-top: 30px; padding-bottom: 30px; margin-top: 80px;
+}
+.footer h2
+{
+	font-size: 14px; color: white; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; width: 100%; padding-bottom: 30px;
+}
+.footer p
+{
+	font-size: 14px; color: white; text-transform: none; font-weight: normal; letter-spacing: 2px;
+}
+.subscribe-btn
+{
+	background-color: #108876; padding-left: 30px; padding-right: 30px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 16px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 50px; letter-spacing: 2px; margin-top: 20px;
+}
+.subscribe-btn:hover
+{
+	background-color: #fff; color: #108876;
+}
+.location-icon
+{
+	float: left; margin-right: 10px;
+}
+.footer h3
+{
+	font-size: 14px; color: white; text-transform: none; font-weight: normal; letter-spacing: 2px; text-align: left; width: 80%; line-height: 23px; padding: 0px; margin: 0px; padding-bottom: 30px;
+}
+.footer h4
+{
+	font-size: 14px; color: white; text-transform: none; font-weight: normal; letter-spacing: 2px; text-align: left; width: 80%; line-height: 23px; padding: 0px; margin: 0px; float: left;
+}
+.footer h4 span
+{
+	font-size: 14px; color: #696969; text-transform: none; font-weight: normal; letter-spacing: 2px; text-align: left; width: 100%; line-height: 23px; padding: 0px; margin: 0px; padding-bottom: 30px !important;
+}
+.margin
+{
+	margin-top: 30px;
+}
+.footer-border
+{
+	width: 100%; height: 1px; background-color: #363636; margin-top: 50px; margin-bottom: 20px;
+}
+.copyright p
+{
+	font-size: 14px; color: white; text-transform: none; font-weight: normal; letter-spacing: 2px; text-align: center;
+}
+/*-------- Footer Section Css Style End -------- */
+
+
+/*-------- Index Page Css Style End -------- */
+
+
+
+
+
+/*-------- About Page Css Style Start -------- */
+.about-inner-heading h2
+{
+	font-size: 20px; color: #1c1c1c; text-align: center !important; float: none; font-weight: normal; padding: 0px; margin: 0px; letter-spacing: 2px; padding-top: 30px; padding-bottom: 30px;
+}
+.about-inner-heading h3
+{
+	font-size: 20px; color: #1c1c1c; text-align: left; font-weight: normal; padding: 0px; margin: 0px; letter-spacing: 2px; padding-top: 30px; padding-bottom: 20px; width: 100%;
+}
+.about-inner-heading h4
+{
+	font-size: 13px; color: #1c1c1c; width: 100%; letter-spacing: 2px; padding: 0px; margin: 0px;
+}
+.about-inner-heading p
+{
+	font-size: 13px; color: #1c1c1c; width: 100%; line-height: 35px; letter-spacing: 2px; padding: 0px; margin: 0px; padding-bottom: 20px;
+}
+.about-image
+{
+	width: 100%;
+}
+.about-inner-video
+{
+	width: 100%; margin-top: 50px; margin-bottom: 0px;
+}
+.about-colum-padding
+{
+	padding-left: 0px;
+}
+.about-bottom-line
+{
+	width: 100%; height: 1px; background-color: #e8e8e8; margin-top: 20px; margin-bottom: 20px;
+}
+/*-------- About Page Css Style End -------- */
+
+
+
+
+
+
+/*-------- Booking Page Css Style Start -------- */
+
+/*-------- Booking Banner Section Css Style Start -------- */
+.booking-banner
+{
+	width: 100%; background-image: url(../../../assets/images/booking-banner-image.jpg); background-repeat: no-repeat; background-attachment: scroll; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding-top: 80px; padding-bottom: 80px; margin-top: -28px;
+}
+.booking-banner-heading h2
+{
+	font-size: 50px; width: 100%; color: white; font-weight: 900; text-align: center; letter-spacing: 8px; text-transform: uppercase; padding-bottom: 30px;
+}
+.booking-banner-heading h2 span
+{
+	font-size: 50px; width: 100%; color: white; font-weight: bold;
+}
+.fleet-icon-heading h2
+{
+	text-align: left; letter-spacing: 2px; text-transform: uppercase; padding-bottom: 10px; width: 87%;
+} 
+.booking-banner-heading p
+{
+	font-size: 16px; color: white; text-align: center; line-height: 40px; text-transform: none; letter-spacing: 2px;
+}
+.booking-col
+{
+	padding-left: 0px; padding-right: 0px;
+}
+.booking-edit-button
+{
+	background-color: #108876; padding-left: 30px; padding-right: 30px; padding-top: 42px; padding-bottom: 42px; color: white; font-size: 16px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 4px; margin-top: -51px; letter-spacing: 2px; width: 100%;
+}
+.booking-edit-button:hover
+{
+	background-color: #1c1c1c;
+}
+.trip-icon
+{
+	margin-top: 50px; margin-bottom: 10px;
+}
+.trip h3
+{
+	font-size: 14px; color: #1c1c1c; text-transform: uppercase; letter-spacing: 2px; text-align: center !important; padding: 0px; margin: 0px; font-weight: normal; width: 100%; padding-top: 6px;
+}
+.top-margin
+{
+	margin-top: 50px;
+}
+.top-margin-distance
+{
+	margin-top: 70px;
+}
+.online-box
+{
+	width: 100%; border: 1px solid #e8e8e8; padding-top: 30px; padding-bottom: 19px; padding-left: 10px; padding-right: 10px;
+}
+.online-heading h2
+{
+	font-size: 18px; color: #1c1c1c; width: 100%; text-transform: none; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px;
+}
+.online-heading p
+{
+	font-size: 13px; color: #1c1c1c; width: 100%; text-transform: none; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: justify; padding-top: 40px;
+}
+.online-border
+{
+	width: 100%; background-color: #e8e8e8; height: 1px; margin-top: 30px; margin-bottom: 30px;
+}
+.online-heading h3
+{
+	font-size: 13px; color: #1c1c1c; width: 87%; text-transform: none; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; padding-bottom: 30px;
+}
+.online-true-icon
+{
+	float: left; margin-right: 10px;
+}
+/*-------- Booking Banner Section Css Style End -------- */
+
+
+/*-------- Booking Page Css Style End -------- */
+
+
+/*-------- Cars Page Css Style Start -------- */
+.pagination > li > a, .pagination > li > span
+{
+	color: #424242;
+}
+.pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus
+{
+	background-color: #108876; color: white; border: 1px solid #108876;
+}
+.padding-off
+{
+	padding-left: 0px; padding-right: 0px;
+}
+.car-heading h2
+{
+	font-size: 18px; color: #424242; text-align: left; text-transform: none; letter-spacing: 2px; width: 100%; border-left: 2px solid #108876; margin-top: 50px; padding-left: 20px; padding-top: 15px; padding-bottom: 15px;
+}
+.nav
+{
+	border-left: 2px solid #e8e8e8;
+}
+.nav-pills > li > a
+{
+	border-radius: 0px; padding-left: 22px; padding-top: 25px; padding-bottom: 25px; color: #9a9a9a; font-size: 14px; letter-spacing: 2px;
+}
+.nav > li > a:hover, .nav > li > a:focus
+{
+	color: #108876; width: 100%;
+}
+.nav-stacked > li
+{
+	border-bottom: 1px solid #e8e8e8; width: 100%; padding-top: 20px; padding-bottom: 20px;
+}
+/*-------- Cars Page Css Style End -------- */
+
+
+/*-------- Drivers Page Css Style Start -------- */
+.drivers-box
+{
+	width: 100%; border: 1px solid #e8e8e8; margin-top: 50px;
+}
+.driver-image
+{
+	width: 100%;
+}
+.driver h2
+{
+	font-size: 16px; color: #1c1c1c; text-align: left; letter-spacing: 2px; text-transform: none; width: 100%; padding-bottom: 10px;
+}
+.driver p
+{
+	font-size: 13px; color: #1c1c1c; text-align: justify; letter-spacing: 2px; text-transform: none; width: 100%; line-height: 30px;
+}
+.driver-border
+{
+	width: 100%; height: 1px; background-color: #e8e8e8; margin-top: 15px;
+}
+.drivers-btn
+{
+	background-color: #108876; padding-left: 20px; padding-right: 20px; padding-top: 10px; padding-bottom: 10px; color: white; font-size: 12px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 50px; letter-spacing: 2px; margin-top: 10px; margin-bottom: 30px;
+}
+.drivers-btn:hover
+{
+	background-color: #1c1c1c; color: #fff;
+}
+/*-------- Drivers Page Css Style End -------- */
+
+
+/*-------- Driver Detail Page Css Style Start -------- */
+.driver-detail h2
+{
+	font-size: 24px; color: #1c1c1c; width: 100%; letter-spacing: 2px; text-align: left; padding-bottom: 20px;
+}
+.driver-detail h3
+{
+	font-size: 18px; color: #1c1c1c; width: 100%; letter-spacing: 2px; text-align: left; padding-bottom: 30px; padding-top: 30px;
+}
+.driver-detail h4
+{
+	font-size: 14px; color: #1c1c1c; width: 100%; letter-spacing: 2px; text-align: left; padding: 0px; margin: 0px;
+}
+.driver-detail h4 span
+{
+	font-size: 14px; color: #108876; width: 100%; letter-spacing: 2px; text-align: left;
+}
+.driver-detail h5
+{
+	font-size: 14px; color: #585858; width: 100%; letter-spacing: 2px; text-align: left; padding: 0px; margin: 0px; padding-top: 20px;
+}
+.driver-detail-image
+{
+	width: 100%; margin-top: 30px;
+}
+.driver-detail p
+{
+	font-size: 13px; color: #1c1c1c; text-align: justify; letter-spacing: 2px;
+}
+.drivers-submit-btn
+{
+	background-color: #108876; padding-left: 40px; padding-right: 40px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 12px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 50px; letter-spacing: 2px; margin-top: 30px; margin-bottom: 30px;
+}
+.drivers-submit-btn:hover
+{
+	background-color: #1c1c1c; color: #fff;
+}
+/*-------- Driver Detail Page Css Style End -------- */
+
+
+/*-------- Location Page Css Style Start -------- */
+.adjust-padding
+{
+	padding-top: 20px;
+}
+.social-icon
+{
+	margin-bottom: 20px;
+}
+/*-------- Location Page Css Style End -------- */
+
+
+/*-------- Quote Page Css Style Start -------- */
+.quote-banner-border
+{
+	width: 100%; height: 8px; background-color: #108876;
+}
+.quote-heading h3
+{
+	font-size: 18px; color: #108876; letter-spacing: 4px; text-align: center !important; text-transform: uppercase; font-weight: normal; float: none; padding-top: 60px;
+}
+.quote-heading h4
+{
+	font-size: 24px; color: #fff; letter-spacing: 4px; text-align: center !important; text-transform: uppercase; font-weight: 900; float: none; padding: 0px; margin: 0px;
+}
+.quote-heading h5
+{
+	font-size: 24px; color: #108876; letter-spacing: 4px; text-align: center !important; text-transform: uppercase; font-weight: 900; float: none; padding: 0px; margin: 0px; padding-bottom: 30px;
+}
+.quote-map
+{
+	max-width: 100%; margin-top: 50px;
+}
+.quote-travel-box
+{
+	width: 100%; background-color: #1c1c1c; padding-top: 30px; padding-bottom: 30px; margin-top: 50px; border-radius: 4px;
+}
+.quote-drop
+{
+	background: none; width: 100%; border: 0px; border-bottom: 1px solid #fff; color: #fff; text-align: left; margin-top: 25px; padding-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;
+}
+.dropup .caret, .navbar-fixed-bottom .dropdown .caret
+{
+	float: right; margin-top: 10px;
+}
+.quote-add-btn
+{
+	background-color: #108876; padding-left: 50px; padding-right: 50px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 16px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; margin-top: 37px; letter-spacing: 2px; margin-bottom: 10px; box-shadow: 0px 4px 0px #111111;
+}
+.quote-add-btn:hover
+{
+	background-color: #fff; color: #108876;
+}
+.form-control-1
+{
+	height: 65px; border-radius: 0px; margin-top: 17px; color: #fff !important; font-size: 12px; font-weight: normal; letter-spacing: 2px; background: none; border-bottom: 1px solid #fff !important; border: 0px; text-transform: uppercase; width: 100%;
+}
+.summary-bg
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #e5e7eb; padding-top: 30px; padding-bottom: 40px; margin-top: 50px;
+}
+.summary-from-box
+{
+	width: 100%; background-color: #108876; border-radius: 4px; padding-top: 15px; padding-bottom: 15px; text-align: center; margin-top: 20px;
+}
+.summary-location-box
+{
+	width: 100%; background-color: #fff; border-radius: 4px; padding-top: 15px; padding-bottom: 15px; text-align: center; border: 1px solid #dbdde4; margin-top: 15px;
+}
+.summary-heading h3
+{
+	font-size: 16px; color: #fff; letter-spacing: 2px; text-align: center !important; text-transform: uppercase; font-weight: 900; float: none; padding: 0px; margin: 0px;
+}
+.summary-heading h4
+{
+	font-size: 16px; color: #108876; letter-spacing: 2px; text-align: center !important; text-transform: uppercase; font-weight: 900; float: none; padding: 0px; margin: 0px;
+}
+.summary-heading h5
+{
+	font-size: 14px; color: #108876; letter-spacing: 2px; text-align: left!important; text-transform: uppercase; font-weight: normal; float: left; padding: 0px; margin: 0px; padding-top: 40px; padding-bottom: 20px; width: 100%;
+}
+.form-control-2
+{
+	height: 50px; border-radius: 0px; color: #272727 !important; font-size: 12px; font-weight: normal; letter-spacing: 2px; border: 1px solid #dbdde4; text-transform: uppercase; width: 100%; padding-left: 20px; padding-right: 20px; border-top-right-radius: 4px; border-bottom-right-radius: 4px;
+}
+.form-control-3
+{
+	height: 50px; border-radius: 4px; color: #272727 !important; font-size: 12px; font-weight: normal; letter-spacing: 2px; border: 1px solid #dbdde4; text-transform: uppercase; width: 100%; padding-left: 20px; padding-right: 20px;
+}
+.input-group-addon
+{
+	padding: 6px 23px; background-color: #108876; border: 1px solid #108876;
+}
+.set-margin
+{
+	margin-top: 20px;
+}
+.quote-next-btn
+{
+	background-color: #1c1c1c; padding-left: 50px; padding-right: 50px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 16px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; margin-top: 30px; letter-spacing: 2px; box-shadow: 0px 3px 0px #000000;
+}
+.quote-next-btn:hover
+{
+	background-color: #108876; color: #fff; box-shadow: 0px 3px 0px #086154;
+}
+/*-------- Quote Page Css Style End -------- */
+
+
+/*-------- Cars And Passengers Page Css Style Start -------- */
+.vehicle-heading h3
+{
+	font-size: 18px; color: #108876; text-transform: uppercase; font-weight: normal; padding-top: 50px;
+}
+.vehicle-box
+{
+	width: 97%; border: 1px dashed #108876; border-radius: 4px; margin-top: 20px; padding-top: 20px; padding-bottom: 20px; cursor: pointer; padding-right: 10px;
+}
+.vehicle-box:hover
+{
+	border: 1px dashed #1c1c1c;width: 97%;margin-top: 20px; padding-top: 20px; padding-bottom: 20px; cursor: pointer; padding-right: 10px;
+}
+.vehicle-heading h4
+{
+	font-size: 14px; color: #1c1c1c; text-transform: none; font-weight: normal; width: 100%; padding: 0px; margin: 0px; letter-spacing: 4px;
+}
+.vehicle-heading h5
+{
+	font-size: 24px; color: #108876; text-transform: none; font-weight: 900; width: 100%; padding: 0px; margin: 0px; text-align: left; padding-top: 10px; letter-spacing: 4px;
+}
+.vehicle-heading h6
+{
+	font-size: 14px; color: #1c1c1c; text-transform: none; font-weight: normal; width: 25%; padding: 0px; margin: 0px; text-align: left; padding-top: 10px; letter-spacing: 0px;
+}
+/* .suit-case-icon
+{
+	margin-top: 20px; float: left; margin-right: 10px;
+} */
+.suit-case-icon
+{
+	margin-top: 10px; float: left; margin-right: 10px;
+}
+.vehicle-image
+{
+	width: 100%; margin-top: 12px;
+}
+.passenger-box
+{
+	width: 100%; background-color: #1c1c1c; border-radius: 4px; padding-top: 20px; padding-bottom: 20px; margin-top: 20px;
+}
+.passenger-heading h2
+{
+	font-size: 18px; color: white; text-transform: uppercase; width: 100%; text-align: center; letter-spacing: 4px; font-weight: bold; padding: 0px; margin: 0px;
+}
+.passenger-heading h3
+{
+	font-size: 14px; color: white; text-transform: uppercase; width: 100%; text-align: left; letter-spacing: 3px; font-weight: normal; padding: 0px; margin: 0px; padding-top: 25px; padding-bottom: 15px;
+}
+.passenger-padding
+{
+	padding: 6px 10px !important;
+}
+.passenger-border-line
+{
+	width: 100%; height: 1px; background-color: #141414; margin-top: 20px; margin-bottom: 20px;
+}
+.drop-margin
+{
+	margin-top: 0px !important; border-top-right-radius: 4px !important; border-bottom-right-radius: 4px !important; 
+}
+.dropdown-menu
+{
+	letter-spacing: 3px;
+}
+.journey-bg
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #e8e8e8; margin-top: 50px; padding-top: 20px; padding-bottom: 20px;
+}
+.journey-heading h2
+{
+	font-size: 18px; color: #108876; font-weight: bold; letter-spacing: 4px; text-transform: uppercase; width: 100%; text-align: center; padding: 0px; margin: 0px;
+}
+.journey-heading h2 span
+{
+	font-size: 18px; color: white; font-weight: bold; letter-spacing: 4px; text-transform: uppercase; width: 100%; text-align: center; padding: 0px; margin: 0px;
+}
+.journey-heading h3
+{
+	font-size: 14px; color: #108876; font-weight: bold; letter-spacing: 4px; text-transform: uppercase; padding: 0px; margin: 0px; width: 100%;
+}
+.journey-heading h3 span
+{
+	font-size: 14px; color: #494949; font-weight: bold; letter-spacing: 4px; text-transform: uppercase; text-align: right; padding: 0px; margin: 0px; float: right !important; width: 100%; margin-top: 5px;
+}
+.journey-heading h4
+{
+	font-size: 14px; color: #108876; font-weight: bold; letter-spacing: 4px; text-transform: uppercase; padding: 0px; margin: 0px; width: 100%; padding-top: 20px; padding-bottom: 15px;
+}
+.journey-heading h5
+{
+	font-size: 14px; color: #494949; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 0px; margin: 0px; width: 100%; padding-top: 3px;
+}
+.journey-heading h5 span
+{
+	font-size: 14px; color: #108876; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; padding: 0px; margin: 0px; width: 100%; padding-top: 3px;
+}
+.journey-from-box
+{
+	width: 100%; background-color: #108876; border-radius: 4px; padding-top: 20px; padding-bottom: 20px; margin-top: 30px;
+}
+.journey-from-address-box
+{
+	width: 100%; background-color: #fff; border-radius: 4px; padding-top: 20px; padding-bottom: 20px; margin-top: 20px; border: 1px solid #cbcccf; padding-left: 15px; padding-right: 15px;
+}
+.form-control-area
+{
+	border-radius: 4px; width: 100%; border: 1px solid #e2e2e2; padding-left: 15px; padding-right: 15px; padding-top: 10px; padding-bottom: 10px; margin-bottom: 20px;
+}
+/*-------- Cars And Passengers Page Css Style End -------- */
+
+
+/*-------- Trip Page Css Style Start -------- */
+.trip-detail-box
+{
+	width: 100%; border: 1px dashed #108876; padding-top: 25px; padding-bottom: 25px; padding-left: 20px; padding-right: 20px; margin-top: 20px; border-radius: 4px;
+}
+.trip-padding
+{
+	padding-left: 0px;
+}
+.trip-detail-heading h3
+{
+	font-size: 14px; color: #108876; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left;
+}
+.trip-detail-heading h3 span
+{
+	font-size: 14px; color: #1c1c1c; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; 
+}
+.trip-detail-heading h4
+{
+	font-size: 14px; color: #108876; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; width: 100%;
+}
+.trip-detail-heading p
+{
+	font-size: 14px; color: #1c1c1c; letter-spacing: 2px; padding: 0px; margin: 0px; line-height: 30px; padding-top: 10px;
+}
+.trip-detail-right-box
+{
+	width: 100%; background-color: #1c1c1c; padding-top: 17px; padding-bottom: 10px; margin-top: 20px; border-radius: 4px;
+}
+.trip-detail-box-1
+{
+	width: 100%; background-color: white; padding-top: 25px; padding-bottom: 25px; padding-left: 20px; padding-right: 20px; border-radius: 4px; margin-bottom: 17px;
+}
+/*-------- Trip Page Css Style End -------- */
+
+
+/*-------- Payment Page Css Style Start -------- */
+.total-price-box
+{
+	width: 100%; background-color: #1c1c1c; margin-top: 20px; border-top-left-radius: 4px; border-top-right-radius: 4px; padding-top: 15px; padding-bottom: 15px; padding-left: 15px; padding-right: 15px;
+}
+.total-price-box-1
+{
+	width: 100%; background-color: #108876; border-bottom-left-radius: 4px; border-bottom-right-radius: 4px; padding-top: 15px; padding-bottom: 15px; padding-left: 15px; padding-right: 15px;
+}
+.total-price-heading h3
+{
+	font-size: 24px; color: white; letter-spacing: 4px; text-transform: uppercase; text-align: center; padding: 0px; margin: 0px; float: none; font-weight: bold;
+}
+.total-price-heading h4
+{
+	font-size: 24px; color: white; letter-spacing: 4px; text-transform: uppercase; text-align: center; padding: 0px; margin: 0px; float: none; font-weight: 900;
+}
+.card-btn
+{
+	background-color: #1c1c1c; padding-left: 50px; padding-right: 50px; padding-top: 20px; padding-bottom: 20px; color: white; font-size: 18px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; margin-top: 30px; letter-spacing: 2px; box-shadow: 0px 3px 0px #000000; width: 100%;
+}
+.card-btn:hover
+{
+	background-color: #108876; color: #fff; box-shadow: 0px 3px 0px #086154;
+}
+.paypal-btn
+{
+	background-color: #108876; padding-left: 50px; padding-right: 50px; padding-top: 20px; padding-bottom: 20px; color: white; font-size: 18px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; margin-top: 30px; letter-spacing: 2px; box-shadow: 0px 3px 0px #086154; width: 100%;
+}
+.paypal-btn:hover
+{
+	background-color: #1c1c1c; color: #fff; box-shadow: 0px 3px 0px #000000;
+}
+.cash-btn
+{
+	background-color: #f5f5f5; padding-left: 50px; padding-right: 50px; padding-top: 20px; padding-bottom: 20px; color: #484848; font-size: 18px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; margin-top: 30px; letter-spacing: 2px; box-shadow: 0px 3px 0px #e0e0e0; width: 100%;
+}
+.cash-btn:hover
+{
+	background-color: #108876; color: #fff; box-shadow: 0px 3px 0px #086154;
+}
+.submit-margin
+{
+	margin-top: 80px;
+}
+/*-------- Payment Page Css Style End -------- */
+
+
+/*-------- Profile And Booking List Page Css Style Start -------- */
+
+
+.booking-list-box
+{
+	width: 100%; border: 1px dashed #108876; margin-top: 20px; padding-top: 10px; padding-bottom: 10px; border-radius: 4px; padding-left: 10px; padding-right: 10px;
+}
+ .booking-list-heading
+ {
+	/* margin-top: 15px; */
+ }
+.booking-list-heading h2
+{
+	font-size: 14px; width: 100%; color: #1c1c1c; padding: 0px; margin: 0px; font-weight: normal; text-transform: none; letter-spacing: 3px;
+}
+
+.booking-list-heading h3
+{
+	font-size: 19px; width: 100%; color: #108876; padding: 0px; margin: 0px; font-weight: 900; text-transform: none; letter-spacing: 5px; padding-top: 0px;
+}
+.booking-list-heading h4
+{
+	font-size: 14px; width: 100%; color: #454444; padding: 0px; margin: 0px; font-weight: normal; text-transform: none; letter-spacing: 2px; padding-top: 0px;
+}
+.booking-list-heading h5
+{
+	font-size: 14px; width: 100%; color: #393939; padding: 0px; margin: 0px; font-weight: normal; text-transform: uppercase; letter-spacing: 4px; padding-top: 20px; text-align: left;
+}
+.booking-list-heading h6
+{
+	font-size: 16px; width: 100%; color: #454444; padding: 0px; margin: 0px; font-weight: normal; text-transform: uppercase; letter-spacing: 4px; text-align: left;word-wrap: break-word;
+}
+.s-margin
+{
+	margin-top: 15px;
+}
+.booking-list-car
+{
+	max-width: 100%;
+}
+.booking-list-padding
+{
+	padding-left: 0px;
+}
+.booking-list-padding-right
+{
+	padding-right: 0px;
+}
+.booking-list-date-box
+{
+	width: 100%; background-color: #eae9e9; border-top-right-radius: 4px; border-bottom-right-radius: 4px; padding-top: 16px; padding-bottom: 16px; padding-left: 20px; padding-right: 20px;
+}
+.date-heading h2 span
+{
+	font-size: 14px; width: 100%; color: #108876;  padding: 0px; margin: 0px; font-weight: bold; text-transform: none; letter-spacing: 3px;
+}
+.date-heading h2
+{
+	font-size: 14px; width: 100%; color: #1c1c1c; padding: 0px; margin: 0px; font-weight: normal; text-transform: none; letter-spacing: 3px; padding-top: 5px;
+}
+.booking-list-map
+{
+	max-width: 100%; margin-top: 30px;
+}
+
+.my-profile-bg
+{
+	width: 100%; background-color: #108876; margin-top: 30px; padding-top: 40px; padding-bottom: 40px;
+}
+.my-profile-heading h2
+{
+	font-size: 30px; color: white; font-weight: 900; text-transform: uppercase; text-align: center; letter-spacing: 5px; padding: 0px; margin: 0px; float: none; padding-top: 30px;
+}
+.my-profile-heading h3
+{
+	font-size: 18px; color: white; font-weight: bold; text-transform: uppercase; text-align: center; letter-spacing: 5px; padding: 0px; margin: 0px; float: none; padding-top: 20px;
+}
+.my-profile-heading h4
+{
+	font-size: 18px; color: white; font-weight: 900; text-transform: uppercase; text-align: center; letter-spacing: 3px; padding: 0px; margin: 0px; float: none; line-height: 30px;
+}
+.contact-info-box
+{
+	width: 100%; background-color: #1c1c1c; margin-top: 30px; padding-top: 25px; padding-bottom: 25px; border-right: 4px solid #108876; padding-left: 15px; padding-right: 15px;
+}
+.my-profile-radius
+{
+	border-radius: 0px !important;
+}
+.my-profile-data-box
+{
+	width: 81%; background-color: #eae9e9; padding-top: 20px; padding-bottom: 21px; padding-left: 20px; border-right: 4px solid #108876;
+}
+.my-profile-signout-btn
+{
+	background-color: #108876; padding-left: 50px; padding-right: 50px; padding-top: 25px; padding-bottom: 25px; color: white; font-size: 16px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; margin-top: 30px; letter-spacing: 5px; width: 100%; border-right: 4px solid #1c1c1c;
+}
+.my-profile-signout-btn:hover
+{
+	background-color: #1c1c1c; color: #fff; border-right: 4px solid #108876;
+}
+.heading
+{
+	text-transform: none !important;
+}
+.listing-box
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #dddfe4; border-radius: 4px; margin-top: 30px; padding-top: 20px; padding-bottom: 20px;
+}
+.listing-car-box
+{
+	width: 100%; background-color: #fff; border: 1px solid #dddfe4; border-radius: 4px; padding-top: 70px; padding-bottom: 70px;
+}
+.listing-car
+{
+	max-width: 100%;
+}
+.listing-heading h2
+{
+	font-size: 18px; color: #696969; text-transform: none; font-weight: normal; letter-spacing: 4px; padding: 0px; margin: 0px;
+}
+.listing-heading h3
+{
+	font-size: 36px; width: 100%; color: #108876; text-transform: none; font-weight: 900; letter-spacing: 5px; padding: 0px; margin: 0px; padding-top: 20px; padding-bottom: 10px;
+}
+.listing-heading h4
+{
+	font-size: 14px; color: #108876; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px; padding-top: 20px;
+}
+.listing-heading h4 span
+{
+	font-size: 14px; color: #1c1c1c; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px;
+}
+.listing-padding
+{
+	padding-left: 0px;
+}
+.listing-edit-btn
+{
+	background-color: #108876; padding-left: 50px; padding-right: 50px; padding-top: 25px; padding-bottom: 25px; color: white; font-size: 16px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; margin-top: 30px; letter-spacing: 5px; width: 100%; border-right: 4px solid #1c1c1c;
+}
+.listing-edit-btn:hover
+{
+	background-color: #1c1c1c; color: #fff; border-right: 4px solid #108876;
+}
+/*-------- Profile And Booking List Page Css Style End -------- */
+
+
+
+/*-------- News Page Css Style Start -------- */
+.news-banner
+{
+	width: 100%; background-image: url(../../../assets/images/news-banner-image.jpg); background-repeat: no-repeat; background-attachment: scroll; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding-top: 80px; padding-bottom: 80px; margin-top: -28px;
+}
+.news-detail-heading h2
+{
+	font-size: 18px; color: #108876; font-weight: bold; letter-spacing: 3px; padding: 0px; margin: 0px; width: 100%; padding-top: 20px; padding-bottom: 20px;
+}
+/*-------- News Page Css Style End -------- */
+
+
+
+/*-------- Contact Page Css Style Start -------- */
+.contact-banner
+{
+	width: 100%; background-image: url(../../../assets/images/contact-banner-image.jpg); background-repeat: no-repeat; background-attachment: scroll; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding-top: 80px; padding-bottom: 80px; margin-top: -28px;
+}
+.contact-us-heading h2
+{
+	font-size: 20px; color: #1c1c1c; text-align: left; letter-spacing: 3px; padding: 0px; margin: 0px; padding-top: 30px; padding-bottom: 30px;
+}
+.contact-us-heading h3
+{
+	font-size: 16px; color: #1c1c1c; text-align: left; letter-spacing: 3px; padding: 0px; margin: 0px;
+}
+.contact-us-heading h4
+{
+	font-size: 20px; color: #1c1c1c; text-align: center; letter-spacing: 3px; padding: 0px; margin: 0px; font-weight: normal;
+}
+.contact-us-heading h5
+{
+	font-size: 22px; color: #108876; text-align: center; letter-spacing: 3px; padding: 0px; margin: 0px; font-weight: bold; padding-bottom: 10px; text-transform: uppercase;
+}
+.contact-us-heading p
+{
+	font-size: 13px; color: #303030; letter-spacing: 2px; text-align: center; padding: 0px; margin: 0px;
+}
+.form-control-contact
+{
+	border: 1px solid #dee0e5; padding-left: 20px; font-size: 16px; margin-bottom: 30px;
+}
+.contact-send
+{
+	background-color: #108876; padding-left: 50px; padding-right: 50px; padding-top: 25px; padding-bottom: 25px; color: white; font-size: 16px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; margin-top: 0px; letter-spacing: 5px; width: 100%; border-right: 4px solid #1c1c1c;
+}
+.contact-send:hover
+{
+	background-color: #1c1c1c; color: #fff; border-right: 4px solid #108876;
+}
+.contact-info-backgroung
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #e5e7eb; padding-top: 30px; padding-bottom: 30px; margin-top: 70px;
+}
+.contact-location-icon
+{
+	margin-top: 40px; margin-bottom: 10px;
+}
+.map
+{
+	width: 100%;
+}
+/*-------- Contact Page Css Style End -------- */
+
+
+
+
+/*-------- Airport Page Css Style Start -------- */
+.airport-banner
+{
+	width: 100%; background-image: url(../../../assets/images/airport-banner-image.jpg); background-repeat: no-repeat; background-attachment: scroll; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding-top: 150px; padding-bottom: 150px; margin-top: -28px;
+}
+.airport-heading h2
+{
+	font-size: 20px; color: #1c1c1c; letter-spacing: 3px; font-weight: normal; padding: 0px; margin: 0px; text-align: center; float: none; padding-top: 40px; padding-bottom: 20px;
+}
+.airport-heading h3
+{
+	font-size: 16px; color: #108876; letter-spacing: 3px; font-weight: normal; padding: 0px; margin: 0px; text-align: left; line-height: 30px; float: none; padding-top: 40px; padding-bottom: 20px; text-transform: uppercase;
+}
+.airport-heading h4
+{
+	font-size: 20px; color: #fff; letter-spacing: 3px; font-weight: normal; padding: 0px; margin: 0px; text-align: center; float: none; padding-bottom: 20px;
+}
+.airport-heading h5
+{
+	font-size: 18px; color: #fff; letter-spacing: 3px; font-weight: normal; padding: 0px; margin: 0px; text-align: left; text-transform: uppercase; padding-top: 80px;
+}
+.airport-heading p
+{
+	font-size: 13px; color: #1c1c1c; letter-spacing: 2px; padding: 0px; margin: 0px; width: 100%; padding-bottom: 20px;
+}
+.airport-heading-icon
+{
+	max-width: 100%;
+}
+.airport-laptop
+{
+	max-width: 100%; margin-top: 50px;
+}
+.our-services-bg
+{
+	width: 100%; background-image: url(../../../assets/images/our-services-bg.jpg); background-repeat: no-repeat; background-attachment: scroll; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding-top: 30px; padding-bottom: 30px;
+}
+.our-service-heading p
+{
+	font-size: 13px; color: #fff; letter-spacing: 2px; padding: 0px; margin: 0px; width: 100%; padding-top: 20px; text-align: center;
+}
+.service-airport-icon
+{
+	margin-top: 30px; margin-bottom: 30px;
+}
+/*-------- Airport Page Css Style End -------- */
+
+
+
+/*-------- Texi Page Css Style Start -------- */
+.texi-banner
+{
+	width: 100%; background-image: url(../../../assets/images/texi-banner-image.jpg); background-repeat: no-repeat; background-attachment: scroll; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding-top: 150px; padding-bottom: 150px; margin-top: -28px;
+}
+/*-------- Texi Page Css Style End -------- */
+
+
+
+
+/*-------- Business Page Css Style Start -------- */
+.business-banner
+{
+	width: 100%; background-image: url(../../../assets/images/booking-banner-image.jpg); background-repeat: no-repeat; background-attachment: scroll; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding-top: 150px; padding-bottom: 150px; margin-top: -28px;
+}
+/*-------- Business Page Css Style End -------- */
+
+
+
+/*-------- Personal Page Css Style Start -------- */
+.personal-banner
+{
+	width: 100%; background-image: url(../../../assets/images/personal-banner-image.jpg); background-repeat: no-repeat; background-attachment: scroll; background-position: center center; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; padding-top: 150px; padding-bottom: 150px; margin-top: -28px;
+}
+/*-------- Personal Page Css Style End -------- */
+
+.responsive-list 
+{
+	background-color: transparent !important;
+    padding: 30px !important;
+    list-style-type: none;
+}
+.responsive-list-item
+{
+	cursor: pointer;
+    border: 2px solid #108876;
+    border-radius: 0px;
+    width: 40px;
+    background-color: #108876;
+    text-align: center;
+}
+.responsive-list-item > a 
+{
+	color: #fff;
+}
+
+
+
+
+
+
+
+
+/*-------- Media Query Css Style Start (768px) -------- */
+@media (max-width: 768px) 
+{
+	.booking-edit-button
+	{
+		background-color: #108876; padding-left: 30px; padding-right: 30px; padding-top: 20px; padding-bottom: 20px; color: white; font-size: 16px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 4px; margin-top: 17px; letter-spacing: 2px; width: 100%;
+	}
+	.booking-edit-button:hover
+	{
+		background-color: #1c1c1c;
+	}
+	.pricing-heading h2
+	{
+	font-size: 24px; color: white; letter-spacing: 2px; text-align: center; padding: 0px; margin: 0px; padding-top: 8px; padding-bottom: 30px; line-height: 40px;
+	}
+	h2
+	{
+	font-size: 12px; color: #3f3f3f; text-transform: none; font-weight: normal; text-align: left; letter-spacing: 2px; float: left; margin: 0px; padding-top: 33px; width: 90%;
+	}
+	.service-icon
+	{
+	margin-bottom: 20px;
+	}
+}
+/*-------- Media Query Css Style End (768px) -------- */
+
+
+/*-------- Media Query Css Style Start (720px) -------- */
+@media (max-width: 720px) 
+{
+	.booking-edit-button
+	{
+		background-color: #108876; padding-left: 30px; padding-right: 30px; padding-top: 20px; padding-bottom: 20px; color: white; font-size: 16px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 4px; margin-top: 17px; letter-spacing: 2px; width: 100%;
+	}
+	.booking-edit-button:hover
+	{
+		background-color: #1c1c1c;
+	}
+	.pricing-heading h2
+	{
+	font-size: 24px; color: white; letter-spacing: 2px; text-align: center; padding: 0px; margin: 0px; padding-top: 8px; padding-bottom: 30px; line-height: 40px;
+	}
+	h2
+	{
+	font-size: 12px; color: #3f3f3f; text-transform: none; font-weight: normal; text-align: left; letter-spacing: 2px; float: left; margin: 0px; padding-top: 33px; width: 90%;
+	}
+	.service-icon
+	{
+	margin-bottom: 20px;
+	}
+	.news-heading h2
+	{
+	font-size: 12px; color: #424242; letter-spacing: 2px; margin: 0px; padding: 0px; text-align: left; padding-top: 13px; width: 38%;
+	}
+	.booking-banner-heading h2
+	{
+	font-size: 35px; width: 100%; color: white; font-weight: 900; text-align: center; letter-spacing: 8px; text-transform: uppercase; padding-bottom: 30px;
+	}
+	.booking-banner-heading h2 span
+	{
+	font-size: 35px; width: 100%; color: white; font-weight: bold;
+	}
+	.booking-list-car
+	{
+	max-width: 100%; margin-top: 50px;
+	}
+	.airport-heading h5
+	{
+	font-size: 18px; color: #fff; letter-spacing: 3px; font-weight: normal; padding: 0px; margin: 0px; text-align: center; float: none; text-transform: uppercase; padding-top: 30px;
+	}
+}
+/*-------- Media Query Css Style End (720px) -------- */
+
+
+/*-------- Media Query Css Style Start (480px) -------- */
+@media (max-width: 480px) 
+{
+	.booking-edit-button
+	{
+		background-color: #108876; padding-left: 30px; padding-right: 30px; padding-top: 20px; padding-bottom: 20px; color: white; font-size: 16px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 4px; margin-top: 17px; letter-spacing: 2px; width: 100%;
+	}
+	.booking-edit-button:hover
+	{
+		background-color: #1c1c1c;
+	}
+	.pricing-heading h2
+	{
+	font-size: 24px; color: white; letter-spacing: 2px; text-align: center; padding: 0px; margin: 0px; padding-top: 8px; padding-bottom: 30px; line-height: 40px;
+	}
+	h2
+	{
+	font-size: 12px; color: #3f3f3f; text-transform: none; font-weight: normal; text-align: left; letter-spacing: 2px; float: left; margin: 0px; padding-top: 33px; width: 90%;
+	}
+	.service-icon
+	{
+	margin-bottom: 20px;
+	}
+	.news-heading h2
+	{
+	font-size: 12px; color: #424242; letter-spacing: 2px; margin: 0px; padding: 0px; text-align: left; padding-top: 13px; width: 38%;
+	}
+	.booking-banner-heading h2
+	{
+	font-size: 35px; width: 100%; color: white; font-weight: 900; text-align: center; letter-spacing: 8px; text-transform: uppercase; padding-bottom: 30px;
+	}
+	.booking-banner-heading h2 span
+	{
+	font-size: 35px; width: 100%; color: white; font-weight: bold;
+	}
+	.booking-list-car
+	{
+	max-width: 100%; margin-top: 50px;
+	}
+	.airport-heading h5
+	{
+	font-size: 18px; color: #fff; letter-spacing: 3px; font-weight: normal; padding: 0px; margin: 0px; text-align: center; float: none; text-transform: uppercase; padding-top: 30px;
+	}
+}
+/*-------- Media Query Css Style End (480px) -------- */
+
+
+/*-------- Media Query Css Style Start (360px) -------- */
+@media (max-width: 360px) 
+{
+	.booking-edit-button
+	{
+		background-color: #108876; padding-left: 30px; padding-right: 30px; padding-top: 20px; padding-bottom: 20px; color: white; font-size: 16px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 4px; margin-top: 17px; letter-spacing: 2px; width: 100%;
+	}
+	.booking-edit-button:hover
+	{
+		background-color: #1c1c1c;
+	}
+	.pricing-heading h2
+	{
+	font-size: 24px; color: white; letter-spacing: 2px; text-align: center; padding: 0px; margin: 0px; padding-top: 8px; padding-bottom: 30px; line-height: 40px;
+	}
+	h2
+	{
+	font-size: 12px; color: #3f3f3f; text-transform: none; font-weight: normal; text-align: left; letter-spacing: 2px; float: left; margin: 0px; padding-top: 33px; width: 90%;
+	}
+	.service-icon
+	{
+	margin-bottom: 20px;
+	}
+	.news-heading h2
+	{
+	font-size: 12px; color: #424242; letter-spacing: 2px; margin: 0px; padding: 0px; text-align: left; padding-top: 13px; width: 38%;
+	}
+	.booking-banner-heading h2
+	{
+	font-size: 35px; width: 100%; color: white; font-weight: 900; text-align: center; letter-spacing: 8px; text-transform: uppercase; padding-bottom: 30px;
+	}
+	.booking-banner-heading h2 span
+	{
+	font-size: 35px; width: 100%; color: white; font-weight: bold;
+	}
+	.booking-list-car
+	{
+	max-width: 100%; margin-top: 50px;
+	}
+	.airport-heading h5
+	{
+	font-size: 18px; color: #fff; letter-spacing: 3px; font-weight: normal; padding: 0px; margin: 0px; text-align: center; float: none; text-transform: uppercase; padding-top: 30px;
+	}
+}
+/*-------- Media Query Css Style End (360px) -------- */
+
+
+/*-------- Media Query Css Style Start (320px) -------- */
+@media (max-width: 320px) 
+{
+	.booking-edit-button
+	{
+		background-color: #108876; padding-left: 30px; padding-right: 30px; padding-top: 20px; padding-bottom: 20px; color: white; font-size: 16px; font-weight: normal; text-transform: none; text-align: center; border: 0px; border-radius: 4px; margin-top: 17px; letter-spacing: 2px; width: 100%;
+	}
+	.booking-edit-button:hover
+	{
+		background-color: #1c1c1c;
+	}
+	.pricing-heading h2
+	{
+	font-size: 24px; color: white; letter-spacing: 2px; text-align: center; padding: 0px; margin: 0px; padding-top: 8px; padding-bottom: 30px; line-height: 40px;
+	}
+	h2
+	{
+	font-size: 12px; color: #3f3f3f; text-transform: none; font-weight: normal; text-align: left; letter-spacing: 2px; float: left; margin: 0px; padding-top: 33px; width: 90%;
+	}
+	.service-icon
+	{
+	margin-bottom: 20px;
+	}
+	.news-heading h2
+	{
+	font-size: 12px; color: #424242; letter-spacing: 2px; margin: 0px; padding: 0px; text-align: left; padding-top: 13px; width: 38%;
+	}
+	.booking-banner-heading h2
+	{
+	font-size: 35px; width: 100%; color: white; font-weight: 900; text-align: center; letter-spacing: 8px; text-transform: uppercase; padding-bottom: 30px;
+	}
+	.booking-banner-heading h2 span
+	{
+	font-size: 35px; width: 100%; color: white; font-weight: bold;
+	}
+	.booking-list-car
+	{
+	max-width: 100%; margin-top: 50px;
+	}
+	.airport-heading h5
+	{
+	font-size: 18px; color: #fff; letter-spacing: 3px; font-weight: normal; padding: 0px; margin: 0px; text-align: center; float: none; text-transform: uppercase; padding-top: 30px;
+	}
+	
+}
+/*-------- Media Query Css Style End (320px) -------- */
+
+.testimonial{
+    text-align: center;
+}
+
+.testimonial .pic{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+.testimonial .pic img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+	margin-top: 30px;
+}
+
+.testimonial .testimonial-title{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #191919;
+	padding-top: 25px;
+	text-align: center !important;
+	margin: 0px;
+}
+
+.testimonial .description{
+    font-size: 14px;
+    color: #787878;
+    line-height: 27px;
+    margin: 0;
+	text-align: center;
+}
+.demo
+{
+	padding: 29px 0; 
+}
+.heading-title
+{
+	margin-bottom: 100px;
+}
+.border
+{
+	border: 1px solid #e8e8e8;
+}
+.testimonial .description:before{
+    content: "\f10d";
+    font-family: fontawesome;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: 46%;
+    font-size: 20px;
+    color: #fa7921;
+    line-height:33px;
+    border: 2px solid #fa7921;
+}
+.tes h5
+{
+	font-size: 14px;
+	color: #191919;
+	text-transform: none;
+	font-weight: normal;
+	letter-spacing: 2px;
+	text-align: center;
+	padding-top: 30px;
+}
+agm-map {
+	height: 398px;
+  }
+/* CSS Document */
+
+/* Base for label styling */
+[type="checkbox"]:not(:checked),
+[type="checkbox"]:checked {
+  position: absolute;
+  left: -9999px;
+}
+[type="checkbox"]:not(:checked) + label,
+[type="checkbox"]:checked + label {
+  position: relative;
+  padding-left: 1.95em;
+  cursor: pointer;
+}
+
+/* checkbox aspect */
+[type="checkbox"]:not(:checked) + label:before,
+[type="checkbox"]:checked + label:before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0;
+  width: 1.25em; height: 1.25em;
+  border: 2px solid #ccc;
+  background: #fff;
+  border-radius: 4px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,.1);
+}
+/* checked mark aspect */
+[type="checkbox"]:not(:checked) + label:after,
+[type="checkbox"]:checked + label:after {
+  content: '✔';
+  position: absolute;
+  top: .1em; left: .3em;
+  font-size: 1em;
+  line-height: 0.8;
+  color: #09ad7e;
+  transition: all .2s;
+}
+/* checked mark aspect changes */
+[type="checkbox"]:not(:checked) + label:after {
+  opacity: 0;
+  transform: scale(0);
+}
+[type="checkbox"]:checked + label:after {
+  opacity: 1;
+  transform: scale(1);
+}
+/* disabled checkbox */
+[type="checkbox"]:disabled:not(:checked) + label:before,
+[type="checkbox"]:disabled:checked + label:before {
+  box-shadow: none;
+  border-color: #bbb;
+  background-color: #ddd;
+}
+[type="checkbox"]:disabled:checked + label:after {
+  color: #999;
+}
+[type="checkbox"]:disabled + label {
+  color: #aaa;
+}
+/* accessibility */
+[type="checkbox"]:checked:focus + label:before,
+[type="checkbox"]:not(:checked):focus + label:before {
+  border: 2px dotted blue;
+}
+
+/* hover style just for information */
+label:hover:before {
+  border: 2px solid #4778d9!important;
+}
+
+
+
+
+
+
+/* Useless styles, just for demo design */
+
+/* h2 {
+  margin: .25em 0 2em;
+  color: #aaa;
+} */
+form {
+  width: 7em;
+  margin: 0 auto;
+}
+.txtcenter {
+  margin-top: 4em;
+  font-size: 1em;
+  text-align: center;
+  color: #aaa;
+}
+.copy {
+ margin-top: 2em; 
+}
+.copy a {
+ text-decoration: none;
+ color: #4778d9;
+}
+
+.step-active
+{
+	border: 2px solid #108876; border-radius: 60px;
+}
+.step-active-carBox
+{
+	width: 97%; margin-top: 20px; padding-top: 20px; padding-bottom: 20px; cursor: pointer; padding-right: 10px; border: 2px solid #108876; border-radius: 4px;
+}
+.step-active-paymentMode
+{
+	border: 2px solid #108876; border-radius: 4px;
+}
+
+/*Auto complete starts*/
+.auto-complete-main
+{
+	height: 50px; background-color: #dfdfdf; color: #b2b2b2;margin-top: 10px !important;
+}
+/*Auto complete ends*/
+
+/*Disable Input start*/
+.disable-input-register {
+background-color:#b2b2b2;
+}
+/*Disable Input end*/
+
+/*Scroll Starts*/
+.scrollbar
+{
+	height: 860px;
+	overflow-y: scroll;
+}
+
+#style-3::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #F5F5F5;
+}
+
+#style-3::-webkit-scrollbar-thumb
+{
+	background-color: #108876;
+}
+.search-results
+{
+	height: 100%;
+}
+/*Scroll Ends*/

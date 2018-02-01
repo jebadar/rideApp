@@ -1,0 +1,84 @@
+<div class="banner-distance-box">
+    <div class="overlay" *ngIf="loading" style="position: absolute;
+    top: 0;
+    width: 95%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.5)">
+        <app-loader-component></app-loader-component>                
+    </div>
+  <div class="banner-distance-heading-box">
+    <h1>Distance</h1>
+  </div>
+  <div class="col-sm-12">
+    <h4>Pickup Location Type</h4>
+  </div>
+  <div class="col-sm-12">
+    <div class="btn-group" role="group" dropdown>
+        <button type="button" class="btn btn-default dropdown-toggle" dropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+         <span *ngIf="first_loc.description === ''">Location Type</span>
+         <span *ngIf="first_loc.description != ''">{{first_loc.description}}</span> 
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" *dropdownMenu>
+            <li *ngFor="let type of typesObj;let counter=index" (click)="initLocation(1,counter)"><a>{{type.description}}</a></li>
+        </ul>
+      </div>
+  </div>
+  <div class="col-sm-12">
+    <h4>Location</h4>
+  </div>
+  <div class="col-sm-12">
+    <div class="btn-group" dropdown role="group" *ngIf="first_loc.description.toLowerCase() !== 'postcode'">
+        <button type="button" class="btn btn-default dropdown-toggle" dropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span *ngIf="reserveObj.from === undefined">Location</span>
+          <span *ngIf="reserveObj.from != undefined">{{reserveObj.from.formatted_address}}</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" *dropdownMenu>
+          <li *ngIf="first_loc.length < 1"><a>Select Location Type</a></li>
+          <li *ngFor="let loc of first_loc.locations;let counter=index"  (click)="selectLoc(1,counter)" ><a>{{loc.name}}</a></li> 
+        </ul>
+    </div>
+          <app-auto-complete-component [key]="1" [setFunc]="set" *ngIf="first_loc.description.toLowerCase() === 'postcode'"></app-auto-complete-component>
+  </div>
+  <div class="col-sm-12">
+    <h4>Drop Off Location Type</h4>
+  </div>
+  <div class="col-sm-12">
+    <div class="btn-group" dropdown role="group">
+        <button type="button" dropdownToggle class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span *ngIf="second_loc.description == ''">Location Type</span>
+            <span *ngIf="second_loc.description != ''">{{second_loc.description}}</span> 
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" *dropdownMenu>
+          <li *ngFor="let type of typesObj;let counter=index"  (click)="initLocation(2,counter)"><a >{{type.description}}</a></li>
+        </ul>
+      </div>
+  </div>
+  <div class="col-sm-12">
+    <h4>Location</h4>
+  </div>
+  <div class="col-sm-12">
+    <div class="btn-group" dropdown role="group" *ngIf="second_loc.description.toLowerCase() !== 'postcode'">
+        <button type="button" class="btn btn-default dropdown-toggle" dropdownToggle data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span *ngIf="reserveObj.to === undefined">Location</span>
+          <span *ngIf="reserveObj.to != undefined">{{reserveObj.to.formatted_address}}</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" *dropdownMenu>
+            <li ><a *ngIf="second_loc.length < 1">Select Location Type</a></li>
+            <li *ngFor="let loc of second_loc.locations;let counter=index" (click)="selectLoc(2,counter)"><a>{{loc.name}}</a></li>            
+        </ul>
+      </div>
+          <app-auto-complete-component [key]="2" [setFunc]="set" *ngIf="second_loc.description.toLowerCase() === 'postcode'"></app-auto-complete-component>
+  </div>
+  <div class="col-sm-12">
+    <div class="text-center">
+      <button type="submit" (click)="reserveNow()" class="btn reserve-btn">Reserve Now</button>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>
+

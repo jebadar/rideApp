@@ -1,0 +1,231 @@
+<!-- Banner Section Start-->
+<div class="booking-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="booking-banner-heading">
+          <h2>
+            <span>Your</span> Quote</h2>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at
+            its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed
+            to using 'Content here, content here', making it look like readable English.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="quote-banner-border"></div>
+<!-- Banner Section End-->
+
+<app-quote-navigate-component [currentStage]="'quote'"></app-quote-navigate-component>
+
+<!-- Map And Travel Section Start-->
+<div #scrollToDiv class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-center">
+        <div class="quote-heading">
+          <h3>Add another pick-up or drop-off location (optional)</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6" style="margin-top: 50px;">
+      <app-google-map-component [origin]="startLoc" [destination]="endLoc" [waypoint]="waypoints" [changeFunc]="changeFunc"></app-google-map-component>
+    </div>
+    <div class="col-sm-6">
+      <div class="quote-travel-box">
+        <div class="overlay" *ngIf="load_types" style="position: absolute;
+          width: 95%;
+          height: 83%;
+          z-index: 1;
+          background-color: rgba(0,0,0,0.5)">
+          <app-loader-component></app-loader-component>
+        </div>
+        <div class="text-center">
+          <div class="quote-heading">
+            <h4>Travel</h4>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="btn-group" dropdown role="group">
+            <button type="button" dropdownToggle class="form-control-1 dropdown-toggle" style="text-align:left;" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span *ngIf="location.description == ''">Location Type</span>
+              <span *ngIf="location.description != ''">{{location.description}}</span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" *dropdownMenu>
+              <li *ngFor="let type of typesObj;let counter=index" (click)="initLocation(counter)">
+                <a>{{type.description}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="btn-group" dropdown role="group" *ngIf="location.description.toLowerCase() !== 'postcode'">
+            <button type="button" class="form-control-1 dropdown-toggle" style="text-align:left;" dropdownToggle data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <span *ngIf="tempAddress === null">Location</span>
+              <span *ngIf="tempAddress != null">{{tempAddress.formatted_address}}</span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" *dropdownMenu>
+              <li>
+                <a *ngIf="location.length < 1">Select Location Type</a>
+              </li>
+              <li *ngFor="let loc of location.locations;let counter=index" (click)="selectLoc(counter)">
+                <a>{{loc.name}}</a>
+              </li>
+            </ul>
+          </div>
+          <app-auto-complete-component [key]="'quote'" [setFunc]="set" *ngIf="location.description.toLowerCase() === 'postcode'"></app-auto-complete-component>
+        </div>
+        <div class="col-sm-12">
+          <div class="dropup" dropdown>
+            <button class="quote-drop dropdown-toggle" dropdownToggle type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <span *ngIf="positionSet === ''">Insert After</span>
+              <span *ngIf="positionSet !== ''">{{positionSet}}</span>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" *dropdownMenu aria-labelledby="dropdownMenu2">
+              <li *ngFor="let loc of locArray" (click)="selectInsertAfter(loc)">
+                <a>{{loc}}</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <button *ngIf="!loading" type="submit" (click)="update('add','')" class="quote-add-btn">
+            Add
+          </button>
+          <button *ngIf="loading" type="submit" style="background-color:white !important;" class="quote-add-btn">
+            <app-loader-component [width]="20"></app-loader-component>
+          </button>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Map And Travel Section End-->
+
+<!-- Summary Section Start-->
+<div class="summary-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="quote-heading">
+          <h5>Summary</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="table-responsive">
+  <div class="container" [ngStyle]="{'display':enableResponsive ? 'table':'block'}" style="padding-bottom: 30px;">
+    <div class="row" [ngStyle]="{'display': enableResponsive ? 'table-row':''}">
+      <div class="col-sm-4 " [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-from-box">
+          <div class="summary-heading">
+            <h3>From</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-from-box">
+          <div class="summary-heading">
+            <h3>To</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}" >
+        <div class="summary-from-box" style="padding-left:8px;padding-right:8px">
+          <div class="summary-heading">
+            <h3>Distance</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}" >
+        <div class="summary-from-box" style="padding-left:8px;padding-right:8px">
+          <div class="summary-heading">
+            <h3>Options</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" [ngStyle]="{'display': enableResponsive ? 'table-row':''}" *ngFor="let loc of routeMapArray;let counter=index">
+      <div class="col-sm-4" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-location-box">
+          <div class="summary-heading">
+            <h4>{{loc.from}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-location-box">
+          <div class="summary-heading">
+            <h4>{{loc.to}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2"  [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-location-box"  style="padding-left:8px;padding-right:8px">
+          <div class="summary-heading">
+            <h4>{{loc.distance}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2"  [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div *ngIf="counter > 0" class="summary-location-box" style="padding-left:8px;padding-right:8px">
+          <div class="summary-heading">
+            <h4 style="cursor: pointer;" (click)="remove(loc.from)">
+              <a>Remove</a>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-loader-component *ngIf="loading"></app-loader-component>
+  </div>
+</div>
+  <div class="row" style="margin:0px">
+    <div class="col-sm-5 offset-sm-1">
+      <div class="summary-heading">
+        <h5>Trip type</h5>
+      </div>
+      <div class="clear"></div>
+      <select style="cursor:pointer;" class="form-control-3" [(ngModel)]="quoteObj.return_trip">
+        <option style="font-size: 15px;" [value]="'single_journey'">
+          <a>Single journey</a>
+        </option>
+        <option style="font-size: 15px;" [value]="'waiting_return_journey'">
+          <a>Waiting return journey</a>
+        </option>
+        <option style="font-size: 15px;" [value]="'return_journey'">
+          <a>Return journey</a>
+        </option>
+      </select>
+    </div>
+    <div class="col-sm-5" *ngIf="quoteObj.return_trip === 'waiting_return_journey'">
+      <div class="summary-heading">
+        <h5>Estimated waiting time</h5>
+      </div>
+      <div class="input-group set-margin">
+        <input type="number" class="form-control-3" placeholder="Time" [(ngModel)]="quoteObj.waiting_time" aria-describedby="basic-addon1">
+        <span class="input-group-addon" id="sizing-addon1">
+          <a style="color: #fff;cursor:unset">Minutes</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-right">
+        <button type="submit" (click)="next()" class="quote-next-btn">Next</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Summary Section End-->

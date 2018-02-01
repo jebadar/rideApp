@@ -1,0 +1,142 @@
+<app-quote-navigate-component [currentStage]="'payment'"></app-quote-navigate-component>
+
+
+<!-- Passenger Detail Section Start-->
+<div class="container">
+	<div class="row">
+		<div class="col-sm-8">
+			<div class="vehicle-heading">
+				<h3>Payment Detail</h3>
+			</div>
+			<div class="clear"></div>
+			<div class="row row-margin">
+			<div class="col-sm-6 trip-padding">
+				<div class="trip-detail-box">
+					<div class="trip-detail-heading">
+						<h3>Trip cast <span>Cast 1</span></h3>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="col-sm-6 trip-padding">
+				<div class="trip-detail-box">
+					<div class="trip-detail-heading">
+						<h3>Trip cast <span>Cast 1</span></h3>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="col-sm-6 trip-padding">
+				<div class="trip-detail-box">
+					<div class="trip-detail-heading">
+						<h3>Trip cast <span>Cast 1</span></h3>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="col-sm-6 trip-padding">
+				<div class="trip-detail-box">
+					<div class="trip-detail-heading">
+						<h3>Trip cast <span>Cast 1</span></h3>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="col-sm-6 trip-padding">
+				<div class="trip-detail-box">
+					<div class="trip-detail-heading">
+						<h3>Trip cast <span>Cast 1</span></h3>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="col-sm-6 trip-padding">
+				<div class="trip-detail-box">
+					<div class="trip-detail-heading">
+						<h3>Trip cast <span>Cast 1</span></h3>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="col-sm-6 trip-padding">
+				<div class="trip-detail-box">
+					<div class="trip-detail-heading">
+						<h3>Trip cast <span>Cast 1</span></h3>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="col-sm-6 trip-padding">
+				<div class="trip-detail-box">
+					<div class="trip-detail-heading">
+						<h3>Trip cast <span>Cast 1</span></h3>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="col-sm-6 trip-padding">
+				<div class="trip-detail-box">
+					<div class="trip-detail-heading">
+						<h3>Trip cast <span>Cast 1</span></h3>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="col-sm-6 trip-padding">
+				<div class="trip-detail-box">
+					<div class="trip-detail-heading">
+						<h3>Trip cast <span>Cast 1</span></h3>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="vehicle-heading">
+				<h3>Total</h3>
+			</div>
+			<div class="clear"></div>
+			<div class="total-price-box">
+				<div class="total-price-heading">
+					<h3>Total price</h3>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="total-price-box-1">
+				<div class="total-price-heading">
+					<h4>${{quoteDetail.total_charges}}</h4>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<button type="submit" [class.step-active-paymentMode] ="quoteDetail.payment_mode == 1" (click)="selectPayment(1)" class="card-btn">
+					<i class="fa fa-check-circle" *ngIf="quoteDetail.payment_mode == 1" aria-hidden="true"></i>
+				Atm card
+			</button>
+			<button type="submit" [class.step-active-paymentMode] ="quoteDetail.payment_mode == 2" (click)="selectPayment(2)" class="paypal-btn">
+					<i class="fa fa-check-circle" *ngIf="quoteDetail.payment_mode == 2" aria-hidden="true"></i>			
+				Paypal
+			</button>
+			<button type="submit" [class.step-active-paymentMode] ="quoteDetail.payment_mode == 3"  (click)="selectPayment(3)" class="cash-btn">
+					<i class="fa fa-check-circle-o" *ngIf="quoteDetail.payment_mode == 3" aria-hidden="true"></i>
+				Cash
+			</button>
+		</div>
+	</div>
+</div> 
+<!-- Passenger Detail Section End-->
+
+<!-- Next Button Section Start-->
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12">
+			<div class="text-center">
+				<button type="submit" *ngIf="!loading" (click)="submit()" class="quote-next-btn submit-margin">Confirm</button>
+				<button *ngIf="loading" type="submit" style="background-color:white !important;" class="quote-next-btn submit-margin">
+					<app-loader-component [width]="20"></app-loader-component>
+				  </button>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Next Button Section End-->

@@ -1,0 +1,423 @@
+<app-quote-navigate-component [currentStage]="'passengers'"></app-quote-navigate-component>
+<div #scrollToDiv class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="journey-heading">
+        <h2 class="journey-padding-holder">Journey Details</h2>
+        <div class="clear"></div>
+        <div class="title-block5"></div>
+      </div>
+    </div>
+    <div class="col-sm-5 offset-sm-1">
+      <div class="journey-from-box">
+        <div class="journey-heading">
+          <h2>
+            <span>Journey From</span>
+          </h2>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="journey-from-address-box">
+        <div class="journey-heading">
+          <h3>Pickup from </h3>
+          <div class="clear"></div>
+          <h3>
+            <span>{{RouteObjInherit.bookingroutes[0].from}}</span>
+          </h3>
+        </div>
+        <div class="clear"></div>
+      </div>
+
+      <!-- <div #field  class="journey-heading">
+        <h4>Full address</h4>
+      </div>
+      <div  [formGroup]="bookingForm">
+      <textarea class="form-control-area" [ngClass]="{'has-error': bookingForm.controls.full_address_from.invalid && bookingForm.controls.full_address_from.touched}"
+        name="full_address_from" formControlName="full_address_from" placeholder="Address" rows="3"></textarea>
+    </div> -->
+    <div class="form-group" *ngFor="let field of RouteObjInherit.fields;let counter=index">
+      <div *ngIf="field.field != null" class="journey-heading">
+        <h4>{{field.field?.name}}</h4>
+      </div>
+      <input *ngIf="field.field != null" class="form-control" [(ngModel)]="field.value" [ngClass]="{'has-error': field.invalid === true}" type="text" />
+    </div>
+      </div>
+    <div class="col-sm-5" [formGroup]="bookingForm">
+      <div class="journey-from-box">
+        <div class="journey-heading">
+          <h2>
+            <span>Journey To</span>
+          </h2>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <div class="journey-from-address-box">
+        <div class="journey-heading">
+          <h3>Drop off to</h3>
+          <div class="clear"></div>
+          <h3>
+            <span>{{RouteObjInherit.bookingroutes[RouteObjInherit.bookingroutes.length-1].to}}</span>
+          </h3>
+        </div>
+        <div class="clear"></div>
+      </div>
+      <!-- <div class="journey-heading">
+        <h4>Full address</h4>
+      </div> -->
+      <!-- <textarea class="form-control-area" [ngClass]="{'has-error': bookingForm.controls.full_address_to.invalid && bookingForm.controls.full_address_to.touched}" -->
+        <!-- name="full_address_to" formControlName="full_address_to" placeholder="Address" rows="3"></textarea> -->
+    </div>
+
+  </div>
+</div>
+<!-- Cars And Passengers Section Start-->
+<div class="journey-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="col-sm-12">
+        <div class="journey-heading">
+          <h2 class="journey-padding-holder">PASSENGER DETAILS</h2>
+          <div class="clear"></div>
+          <div class="title-block5"></div>
+        </div>
+      </div>
+      <div class="col-sm-12" *ngIf="registerRequire">
+          <a class="login-anchor" (click)="closeLogin()">Already a Member? Login now</a>
+      </div>
+        <div class="clear"></div>
+        <div class="row row-margin">
+          <div class="col-sm-4">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Name</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="registerForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon13">
+                <img [src]="assetsUrl + 'images/name-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" [class.form-control-2-disable]="registerRequire == false" placeholder="Name" aria-describedby="basic-addon1"
+                [class.disable-input-register]="registerRequire == false" [readonly]="registerRequire == false" type="text"
+                name="name" formControlName="name">
+            </div>
+
+          </div>
+          <div class="col-sm-4" [formGroup]="registerForm">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Email Address</h3>
+            </div>
+            <div class="input-group set-margin">
+              <span class="input-group-addon passenger-padding" id="basic-addon1375">
+                <img [src]="assetsUrl + 'images/emal-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2 no-Text-Transform" [class.form-control-2-disable]="registerRequire == false" placeholder="Email"
+                aria-describedby="basic-addon1" [class.disable-input-register]="registerRequire == false" [readonly]="registerRequire == false"
+                type="email" name="email" formControlName="email">
+            </div>
+          </div>
+          <div class="col-sm-4" *ngIf="registerRequire == true">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>re-confirm Email Address</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="registerForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon13758">
+                <img [src]="assetsUrl + 'images/emal-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2 no-Text-Transform" [class.form-control-2-disable]="registerRequire == false" placeholder="Email"
+                aria-describedby="basic-addon1" name="confirmEmail" formControlName="confirmEmail" type="email">
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Phone Number</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="registerForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon130">
+                <img [src]="assetsUrl + 'images/phn-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Phone" aria-describedby="basic-addon1" [class.disable-input-register]="registerRequire == false"
+                [readonly]="registerRequire == false" [class.form-control-2-disable]="registerRequire == false" name="phone"
+                formControlName="phone" min="0" type="number">
+            </div>
+          </div>
+          <div class="col-sm-4" *ngIf="registerRequire == true">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Password</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="registerForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon130">
+                <img [src]="assetsUrl + 'images/phn-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Password" aria-describedby="basic-addon1" name="password" formControlName="password"
+                type="password">
+            </div>
+          </div>
+          <div class="col-sm-4" *ngIf="registerRequire == true">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Confirm Password</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="registerForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon130">
+                <img [src]="assetsUrl + 'images/phn-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Confirm password" aria-describedby="basic-addon1" type="password" formControlName="confirmPassword">
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Booking For</h3>
+            </div>
+            <div class="input-group set-margin">
+              <span class="input-group-addon passenger-padding" id="basic-addon18">
+                <input type="radio" [checked]="checkboxArr.self" (change)="onChange('self')" aria-label="...">
+              </span>
+              <input class="form-control-2 cursor" (click)="onChange('self')" readonly placeholder="My Self" aria-describedby="basic-addon1"
+                type="text">
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Booking For</h3>
+            </div>
+            <div class="input-group set-margin">
+              <span class="input-group-addon passenger-padding" id="basic-addon189">
+                <input type="radio" [checked]="checkboxArr.someone" (change)="onChange('someone')" aria-label="...">
+              </span>
+              <input class="form-control-2 cursor" (click)="onChange('someone')" readonly placeholder="Someone else" aria-describedby="basic-addon1"
+                type="text">
+            </div>
+          </div>
+        </div>
+        <div *ngIf="someoneElseCheck" class="clear"></div>
+        <div *ngIf="someoneElseCheck" class="passenger-border-line"></div>
+        <div class="row row-margin" *ngIf="someoneElseCheck">
+          <div class="col-sm-12">
+            <div class="journey-heading">
+              <h2 class="journey-padding-holder">Person Detail</h2>
+              <div class="clear"></div>
+              <div class="title-block5"></div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Name</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="someoneElseForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon13">
+                <img [src]="assetsUrl + 'images/name-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Name" aria-describedby="basic-addon1" type="text" name="name" formControlName="name">
+            </div>
+
+          </div>
+          <div class="col-sm-4">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Phone Number</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="someoneElseForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon130">
+                <img [src]="assetsUrl + 'images/phn-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2" placeholder="Phone" aria-describedby="basic-addon1" name="phone" min="0" formControlName="phone"
+                type="number">
+            </div>
+          </div>
+          <div class="col-sm-4" [formGroup]="registerForm">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Email Address</h3>
+            </div>
+            <div class="input-group set-margin" [formGroup]="someoneElseForm">
+              <span class="input-group-addon passenger-padding" id="basic-addon1375">
+                <img [src]="assetsUrl + 'images/emal-icon.png'" alt="" />
+              </span>
+              <input class="form-control-2 no-Text-Transform" placeholder="Email" aria-describedby="basic-addon1" type="email" name="email"
+                formControlName="email">
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="passenger-border-line"></div>
+        <div class="row row-margin">
+          <div class="col-sm-12">
+            <div class="journey-heading">
+              <h2 class="journey-padding-holder">Seating Details</h2>
+              <div class="clear"></div>
+              <div class="title-block5"></div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Passengers</h3>
+            </div>
+            <div class="input-group set-margin">
+              <span class="input-group-addon passenger-padding" id="basic-addon159">
+                <img [src]="assetsUrl + 'images/passrngers-icon.png'" alt="" />
+              </span>
+              <div class="btn-group" dropdown role="group">
+                <button type="button" dropdownToggle class="btn btn-default dropdown-toggle drop-margin" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  {{RouteObjInherit.no_of_passengers}}
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" *dropdownMenu>
+                  <li *ngFor="let i of Arr(4).fill(1);let counter=index" (click)="selectCarDetail('no_of_passengers', counter+1)">
+                    <a>{{counter+1}}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Children Detail</h3>
+            </div>
+            <div class="input-group set-margin">
+              <span class="input-group-addon passenger-padding" id="basic-addon1590">
+                <img [src]="assetsUrl + 'images/chiled-icon.png'" alt="" />
+              </span>
+              <div class="btn-group" dropdown role="group">
+                <button type="button" dropdownToggle class="btn btn-default dropdown-toggle drop-margin" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  {{RouteObjInherit.no_of_childseats}}
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" *dropdownMenu>
+                  <li (click)="selectCarDetail('no_of_childs', 0)">
+                    <a>0</a>
+                  </li>
+                  <li (click)="selectCarDetail('no_of_childs', 1)">
+                    <a>1</a>
+                  </li>
+                  <li (click)="selectCarDetail('no_of_childs', 2)">
+                    <a>2</a>
+                  </li>
+                  <li (click)="selectCarDetail('no_of_childs', 3)">
+                    <a>3</a>
+                  </li>
+                  <li (click)="selectCarDetail('no_of_childs', 4)">
+                    <a>4</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="passenger-heading">
+              <div class="title-block6"></div>
+              <h3>Suit Cases</h3>
+            </div>
+            <div class="input-group set-margin">
+              <span class="input-group-addon passenger-padding" id="basic-addon166">
+                <img [src]="assetsUrl + 'images/suitcases-icon.png'" alt="" />
+              </span>
+              <div class="btn-group" dropdown role="group">
+                <button type="button" dropdownToggle class="btn btn-default dropdown-toggle drop-margin" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  {{RouteObjInherit.no_of_suitcases}}
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" *dropdownMenu>
+                  <li *ngFor="let i of Arr(4).fill(1);let counter=index" (click)="selectCarDetail('no_of_suitCases', counter+1)">
+                    <a>{{counter+1}}</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="passenger-border-line"></div>
+        <div *ngIf="enableChildDetail && RouteObjInherit.no_of_childseats > 0" class="row row-margin">
+          <div class="col-sm-12">
+            <div class="journey-heading">
+              <h2 class="journey-padding-holder">Children Details</h2>
+              <div class="clear"></div>
+              <div class="title-block5"></div>
+            </div>
+          </div>
+          <!-- <div *ngIf="RouteObjInherit.car_type_id !== null"> -->
+            <div *ngFor="let cat of Arr(RouteObjInherit.no_of_childseats).fill(1);let counter=index" class="col-sm-6">
+              <div class="passenger-heading">
+                <div class="title-block6"></div>
+                <h3>Child Seat {{counter+1}} Type</h3>
+              </div>
+              <div class="input-group set-margin">
+                <span class="input-group-addon passenger-padding" id="basic-addon159">
+                  <img [src]="assetsUrl + 'images/chiled-icon.png'" alt="" />
+                </span>
+                <div class="btn-group" dropdown role="group">
+                  <button type="button" dropdownToggle class="btn btn-default dropdown-toggle drop-margin" data-toggle="dropdown" aria-haspopup="true"
+                    aria-expanded="false">
+                    {{childSeatArr[counter]?.name}}
+                    <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" *dropdownMenu>
+                    <li *ngFor="let cat of RouteObjInherit.cartype.seats;let count=index" (click)="selectChild(cat.childseat.id,cat.childseat.name,counter)">
+                      <a>{{cat.childseat?.name}}</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          <!-- </div> -->
+          <div class="col-sm-12" *ngIf="RouteObjInherit.car_type_id === null">
+              <div class="journey-heading">
+              <h2 class="journey-padding-holder" style="font-size:19px !important;">No Car Is Selected</h2>
+              <div class="clear"></div>
+              <div class="title-block5"></div>
+            </div>
+
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 cursor" (click)="onChange('terms')">
+      <div class="form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" [checked]="RouteObjInherit.terms === true" value="">
+          <div class="journey-heading cursor">
+            <h5 (click)="onChange('terms')">Please check the box to accept the
+              <span>terms and conditions.</span>
+            </h5>
+          </div>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Cars And Passengers Section End-->
+
+<!-- Next Button Section Start-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-right">
+        <!-- <button type="submit" class="quote-next-btn">Next</button> -->
+        <button *ngIf="!loading" type="submit" (click)="next()" class="quote-next-btn">Next</button>
+        <button *ngIf="loading" type="submit" class="quote-next-btn-load">
+          <app-loader-component [width]="50"></app-loader-component>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Next Button Section End-->
+<app-login *ngIf="enableLogin" [close]="closeLogin" [belongs_to]="'main'" [setUser]="setUser" [skipCheck]="skipCheck"></app-login>

@@ -1,0 +1,95 @@
+
+/*-------- Trip Page Css Style Start -------- */
+.trip-detail-box
+{
+	width: 100%; border: 1px dashed #0f8471; padding-top: 25px; padding-bottom: 25px; padding-left: 20px; padding-right: 20px; margin-top: 20px; border-radius: 4px;
+}
+.trip-padding
+{
+	padding-left: 0px;
+}
+.trip-detail-heading h2
+{
+	font-size: 30px; color: #1c1c1c; text-transform: uppercase; font-weight: bold; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; padding-top: 50px;
+}
+.trip-detail-heading h2 span
+{
+	font-size: 30px; color: #0f8471; text-transform: uppercase; font-weight: bold; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; padding-top: 50px;
+}
+.suit-case-icon
+{
+	margin-top: 10px; float: left; margin-right: 10px;
+}
+.vehicle-heading h4
+{
+	font-size: 14px; color: #1c1c1c; text-transform: none; font-weight: normal; width: 100%; padding: 0px; margin: 0px; letter-spacing: 4px;
+}
+.vehicle-heading h5
+{
+	font-size: 24px; color: #cc4452; text-transform: none; font-weight: 900; width: 100%; padding: 0px; margin: 0px; text-align: left; padding-top: 10px; letter-spacing: 4px;
+}
+.vehicle-heading h6
+{
+	font-size: 14px; color: #1c1c1c; 
+	text-transform: none; font-weight: normal; 
+	width: 25%; padding: 0px; margin: 0px; 
+	text-align: left; padding-top: 10px; 
+	letter-spacing: 0px;
+	float:left;
+}
+.trip-detail-heading h3
+{
+	font-size: 14px; color: #0f8471; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left;
+}
+.trip-detail-heading h3 span
+{
+	font-size: 14px; color: #1c1c1c; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; 
+}
+.trip-detail-heading h4
+{
+	font-size: 14px; color: #0f8471; text-transform: uppercase; font-weight: normal; letter-spacing: 2px; padding: 0px; margin: 0px; text-align: left; width: 100%;
+}
+.trip-detail-heading p
+{
+	font-size: 14px; color: #1c1c1c; letter-spacing: 2px; padding: 0px; margin: 0px; line-height: 30px; padding-top: 10px;
+}
+.trip-detail-right-box
+{
+	width: 100%; background-color: #1c1c1c; padding-top: 17px; padding-bottom: 10px; margin-top: 20px; border-radius: 4px;
+}
+.trip-detail-box-1
+{
+	width: 100%; background-color: white; padding-top: 25px; padding-bottom: 25px; padding-left: 20px; padding-right: 20px; border-radius: 4px; margin-bottom: 17px;
+}
+.trip-image
+{
+	max-width: 100%; margin-top: 30px;
+}
+.trip-car-price-bg
+{
+	width: 100%; background-color: #0f8471; border: 8px solid #e7f2f1; border-radius: 100%; padding-top: 45px; padding-bottom: 45px;min-height: 100%;
+}
+.trip-car-price-hrading h2
+{
+	font-size: 40px; color: white; 
+	font-weight: 900; letter-spacing: 2px; 
+	text-align: center; padding: 0px; margin: 0px; 
+	text-transform: uppercase; float: none;padding-top: 20px;
+}
+.trip-car-price-hrading h3
+{
+	font-size: 39px; color: white; font-weight: 900; letter-spacing: 5px; text-align: center; padding: 0px; margin: 0px; text-transform: uppercase; float: none;
+}
+/*-------- Trip Page Css Style End -------- */
+.quote-next-btn
+{
+	background-color: #0f8471; padding-left: 50px; padding-right: 50px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 16px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; margin-top: 30px; letter-spacing: 2px; box-shadow: 0px 3px 0px #0a6f5f;
+}
+.quote-next-btn:hover
+{
+	background-color: #000; color: #fff; box-shadow: 0px 3px 0px #000;
+}
+.quote-next-btn-load 
+{
+	background-color:white !important; padding-left: 50px; padding-right: 50px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 16px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; letter-spacing: 2px;
+}

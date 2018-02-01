@@ -1,0 +1,43 @@
+<div class="modal_wrapper">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-6 offset-sm-3" (click)="ignoreClick($event)">
+            <div class="login-bg" *ngIf="!reset">
+              <div class="login-box">
+                <h1>Verification</h1>
+              </div>
+              <div class="col-12">
+                <div *ngIf="!verifyResponse && loading">
+                    <div class="col-sm-12">
+                        <h3 class="reset-h3">Your Email is been verifying</h3>
+                    </div>
+                    <div *ngIf="loading">
+                        <app-loader-component [width]="80"></app-loader-component>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class=" login" *ngIf="verifyResponse && !loading">
+                    <div class="col-sm-12">
+                        <br />
+                        <h3 class="reset-h3" style="font-size:20px !important;">Your Account has successfully verified</h3>
+                        <h3 class="reset-h3" style="font-size:14px !important;">Please login with your email and password</h3>                        
+                        <div class="text-center">
+                            <button (click)="login()" class="login-popup-button verify-ok-btn">Login</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-12" *ngIf="!verifyResponse && !loading">
+                    <h3 class="reset-h3">Not verified</h3>
+                    <br />                        
+                    <div class="text-center">
+                        <button (click)="navigate()" class="login-popup-button verify-ok-btn">Okay</button>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- <app-login *ngIf="loginEnable"></app-login> -->
+<app-login *ngIf="loginEnable" [close]="closeLogin" [belongs_to]="'main'" [setUser]="setUser" [skipCheck]="skipCheck"></app-login>

@@ -1,0 +1,259 @@
+<app-quote-navigate-component [currentStage]="'summary'"></app-quote-navigate-component>
+
+<div #scrollToDiv class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="trip-detail-heading">
+          <h2>VEHICLE SELECTED: <span>{{quoteDetail.car?.name}}</span></h2>
+        </div>
+      </div>
+      <div class="col-sm-3">
+          <img class="trip-image" [src]="assetsUrl + 'images/fleet-slider-1.png'" alt=""/> 
+        </div>
+        <div class="col-sm-6">
+          <div class="row">
+            <div class="col-sm-4 offset-sm-8">
+                <img class="suit-case-icon" [src]="assetsUrl + 'images/suit-case-icon.png'" alt="">
+                <div class="vehicle-heading">
+                  <h6>{{quoteDetail.no_of_suitcases}}</h6>
+                </div>
+              
+                <img class="suit-case-icon" [src]="assetsUrl + 'images/passenger-icon.png'" alt="">
+                <div class="vehicle-heading">
+                  <h6>{{quoteDetail.no_of_passengers}}</h6>
+                </div> 
+              </div>
+            </div>
+             <img class="trip-image" [src]="assetsUrl + 'images/trip-car-image.jpg'" alt=""/>                 
+                <!-- <img class="adjust-image2" *ngIf="car.media.length === 2" [src]="car.media[1].name" alt="" />
+                <img class="select-car" *ngIf="car.media.length !== 2" [src]="assetsUrl + 'images/select-car-1-image.jpg'" alt="" /> -->
+         
+      </div>
+      <div class="col-sm-3">
+        <div class="trip-car-price-bg">
+          <div class="trip-car-price-hrading">
+            <h2>COST:</h2>
+            <h3>{{unitSettings.value}}{{quoteDetail.total_charges}}</h3>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Trip Section End-->
+  
+  <!-- Passenger Detail Section Start-->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="vehicle-heading">
+          <h3>Trip Details</h3>
+          <div class="clear"></div>
+          <div class="title-block4"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="trip-detail-right-box">
+          <div class="col-sm-12">
+            <div class="trip-detail-box-1">
+              <div class="trip-detail-heading">
+              <h3>date <span>{{quoteDetail.time * 1000 | date}}</span></h3>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="trip-detail-box-1">
+              <div class="trip-detail-heading">
+              <h3>Time <span>{{date}}</span></h3>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="trip-detail-box-1">
+              <div class="trip-detail-heading">
+              <h3>Pickup from <span>{{quoteDetail.bookingroutes[0].from}}</span></h3>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <div class="col-sm-12">
+            <div class="trip-detail-box-1">
+              <div class="trip-detail-heading">
+              <h3>Drop off to <span>{{quoteDetail.bookingroutes[0].to}}</span></h3>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <!-- <div class="col-sm-12">
+            <div class="trip-detail-box-1">
+              <div class="trip-detail-heading">
+              <h3>Location Type <span>Near bahria</span></h3>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div> -->
+          <div class="col-sm-12">
+            <div class="trip-detail-box-1">
+              <div class="trip-detail-heading">
+              <h3>Vehicle <span>{{quoteDetail.cartype?.name}}</span></h3>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </div>
+      </div>
+      <div class="col-sm-8">
+        <div class="vehicle-heading">
+          <h3>Passenger Details</h3>
+          <div class="clear"></div>
+          <div class="title-block4"></div>
+        </div>
+        <div class="clear"></div>
+        <div class="row row-margin">
+        <!-- <div class="col-sm-6 trip-padding">
+          <div class="trip-detail-box">
+            <div class="trip-detail-heading">
+              <h3>Title <span>{{quoteDetail.customer?.title}}</span></h3>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div> -->
+        <div class="col-sm-6 trip-padding">
+          <div class="trip-detail-box">
+            <div class="trip-detail-heading">
+                <h3 *ngIf="quoteDetail.booking_for_self === 'self'">Name
+                    <span>{{quoteDetail.customer?.name}}</span>
+                  </h3>
+                  <h3 *ngIf="quoteDetail.booking_for_self === 'someone'">Name
+                    <span>{{quoteDetail.passenger_name}}</span>
+                  </h3>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <!-- <div class="col-sm-6 trip-padding">
+          <div class="trip-detail-box">
+            <div class="trip-detail-heading">
+              <h3>Surname <span>{{quoteDetail.customer?.surname}}</span></h3>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div> -->
+        <div class="col-sm-6 trip-padding">
+          <div class="trip-detail-box">
+            <div class="trip-detail-heading">
+                <h3 *ngIf="quoteDetail.booking_for_self === 'self'">Phone
+                    <span>{{quoteDetail.customer?.phone}}</span>
+                  </h3>
+                  <h3 *ngIf="quoteDetail.booking_for_self === 'someone'">Phone
+                    <span>{{quoteDetail.contact_no}}</span>
+                  </h3>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+				<div *ngIf="quoteDetail.booking_for_self === 'self'" class="col-sm-6 trip-padding">
+            <div class="trip-detail-box">
+              <div class="trip-detail-heading">
+                <h3>Email
+                  <span >{{quoteDetail.customer?.email}}</span>
+                </h3>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+  
+          <div *ngIf="quoteDetail.booking_for_self === 'someone'" class="col-sm-6 trip-padding">
+            <div class="trip-detail-box">
+              <div class="trip-detail-heading">
+                <h3>Email
+                  <span>{{quoteDetail.email}}</span>
+                </h3>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        <div class="col-sm-6 trip-padding">
+          <div class="trip-detail-box">
+            <div class="trip-detail-heading">
+              <h3>Booking For <span>{{quoteDetail.booking_for_self}}</span></h3>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="col-sm-6 trip-padding">
+          <div class="trip-detail-box">
+            <div class="trip-detail-heading">
+              <h3>Passengers <span>{{quoteDetail.no_of_passengers}}</span></h3>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="col-sm-6 trip-padding">
+          <div class="trip-detail-box">
+            <div class="trip-detail-heading">
+              <h3>Child Detail <span>{{quoteDetail.no_of_childseats}}</span></h3>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="col-sm-6 trip-padding">
+          <div class="trip-detail-box">
+            <div class="trip-detail-heading">
+              <h3>Suit cases <span>{{quoteDetail.no_of_suitcases}}</span></h3>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+        <div class="col-sm-6 trip-padding">
+          <div class="trip-detail-box">
+            <div class="trip-detail-heading">
+              <h3>Carry on <span>{{quoteDetail.no_of_handcarry}}</span></h3>
+            </div>
+            <div class="clear"></div>
+          </div>
+        </div>
+				<div class="col-sm-12 trip-padding">
+            <div class="trip-detail-box">
+              <div class="trip-detail-heading">
+                <h4>Pickup Details:</h4>
+                <p *ngIf="pickupDetail != undefined">{{pickupDetail?.from}}</p>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+          <div class="col-sm-12 trip-padding">
+            <div class="trip-detail-box">
+              <div class="trip-detail-heading">
+                <h4>Drop off Details:</h4>
+                <p>{{pickupDetail?.to}}</p>
+              </div>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+  <!-- Passenger Detail Section End-->
+  
+  <!-- Next Button Section Start-->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="text-right">
+          <button (click)="back()" type="submit" class="quote-next-btn">Back</button>
+          <button (click)="updateQuote()" *ngIf="!loading_next" type="submit" class="quote-next-btn">Next</button>
+          <button *ngIf="loading_next" type="submit"  class="quote-next-btn-load">
+              <app-loader-component [width]="50"></app-loader-component>
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Next Button Section End-->
+  <app-auto-confirm-popup *ngIf="enableAutoBox" [key]="'auto-confirm'" [close]="closeBox"></app-auto-confirm-popup>
+  <app-auto-confirm-popup *ngIf="enablePaymentBox" [key]="''" [close]="closeBox"></app-auto-confirm-popup>
+  

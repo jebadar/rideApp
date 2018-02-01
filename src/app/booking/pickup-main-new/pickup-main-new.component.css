@@ -1,0 +1,239 @@
+/* @import url('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'); */
+
+h1
+{
+	font-size: 24px; color: white; text-transform: uppercase; 
+	font-weight: 900; line-height: 0px; text-align: center; 
+	letter-spacing: 2px; 
+	/* border: 5px solid #fff;  */
+	padding-top: 30px; padding-bottom: 30px; 
+	padding-left: 20px; padding-right: 20px; width: 100%; 
+	float: none;line-height: 30px;
+}
+h2
+{
+	font-size: 12px; color: #fff; text-transform: none; font-weight: normal; text-align: left; letter-spacing: 2px; float: left; margin: 0px;
+}
+h3
+{
+	font-size: 9px; color: #fff; text-transform: none; font-weight: normal; text-align: left; letter-spacing: 2px; float: left; margin: 0px; padding-top: 5px;
+}
+.positionRelative 
+{
+	position:relative;
+}
+.line 
+{
+	position: absolute;
+    left: 50%;
+    top: 23px;
+    min-height: 100px;
+    border: 1px solid white;
+}
+.col-border{ 
+	border-right: 3px solid #fff;}
+h4
+{
+	font-size: 18px; color: #fff; text-transform: none; font-weight: bold; letter-spacing: 2px; padding-top: 15px;
+}
+h5
+{
+	font-size: 28px; color: #191919; text-transform: uppercase; font-weight: 900; letter-spacing: 3px; text-align: center; padding-top: 30px;
+}
+h6
+{
+	font-size: 16px; color: #424242; text-transform: none; font-weight: normal; padding-top: 20px; letter-spacing: 2px; float: left;
+}
+a
+{
+	color: #000;
+}
+p
+{
+	font-size: 14px; color: #000; line-height: 30px; text-align: justify; font-weight: normal; padding-top: 15px;
+}
+.banner-distance-box
+{
+	width: 100%; background-color: rgba(0, 0, 0, 0.8); border: 5px solid #fff; 
+	border-radius: 50px; padding-left: 30px; padding-right: 30px; min-height: 540px;
+}
+.banner-icons
+{
+	margin-top: 30px; margin-bottom: 10px; max-width:66px;max-height: 77px;
+}
+.cursor
+{
+	cursor: pointer;
+}
+.banner-icons-heading h2
+{
+	font-size: 14px; color: white; font-weight: normal; text-transform: none; text-align: center !important; float: none; 
+	overflow: hidden;
+}
+.banner-icons-heading h3
+{
+	font-size: 45px; color: black; font-weight: 900; text-transform: uppercase; text-align: center; float: none;
+}
+.banner-icons-heading h3 span
+{
+	font-size: 30px; color: black; font-weight: bold; text-transform: uppercase; text-align: center; float: none;
+}
+.banner-icons-heading h4
+{
+	font-size: 14px; color: white; font-weight: normal; text-transform: none; text-align: left; padding: 0px; margin: 0px; width: 100%; padding-top: 30px; letter-spacing: 0px;
+}
+.banner-icons-heading h5
+{
+	font-size: 12px; color: black; font-weight: normal; text-transform: none; text-align: center; padding: 0px; margin: 0px; width: 100%; letter-spacing: 0px; float: none;
+}
+.banner-icons-heading h6
+{
+	font-size: 14px; color: white; font-weight: normal; text-transform: none; text-align: left; padding: 0px; margin: 0px; width: 100%; letter-spacing: 0px; float: right;
+}
+.btn-group, .btn-group-vertical
+{
+	width: 100%;
+}
+.btn-group > .btn:first-child
+{
+	width: 100%; text-align: left; height: 50px; border-radius: 0px; margin-top: 10px; color: #b2b2b2; font-size: 12px; letter-spacing: 2px;
+}
+.dropdown-menu
+{
+	width: 100%; border-radius: 0px;
+}
+.dropdown-menu > li > a
+{
+	border-bottom: 1px solid #e8e8e8; line-height: 40px;
+}
+.dropdown-menu
+{
+	letter-spacing: 3px;padding-left: 20px;
+}
+.time-padding
+{
+    padding-left: 0px; padding-right: 5px;
+}
+.form-check
+{
+	margin-top: 28px;
+}
+.form-check-label
+{
+	color: white; font-size: 13px;
+}
+.dropdown-toggle::after
+{
+	float: right; margin-top: 9px;
+}
+.time-bg
+{
+	background-color: white; border-radius: 4px; padding-top: 8px; padding-bottom: 8px; text-align: center; margin-top: 22px; margin-right: 7px;
+}
+.float-holder
+{
+	float: left;
+}
+.fleet-margin-adjust
+{
+	margin-top: 80px;
+}
+.margin-adjust
+{
+    margin-top: 5px !important; 
+}
+.marginTop
+{
+	margin-top: 30px;
+}
+.padding-adjust 
+{
+	padding-top:5px !important;
+}
+.reserve-btn
+{
+	background-color: #108876; padding-left: 50px; padding-right: 50px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 16px; font-weight: bold; text-transform: uppercase; text-align: center; border: 0px; border-radius: 50px; margin-top: 30px; letter-spacing: 2px; margin-bottom: 30px;
+}
+.reserve-btn:hover
+{
+	background-color: #fff; color: #108876;
+}
+.form-control
+{
+	height: 40px; margin-top: 17px; color: #696969 !important; font-size: 10px; font-weight: normal; letter-spacing: 2px; 
+	border: 0px; text-transform: none; border-radius: 4px; 
+	padding-left: 1px; padding-right: 0px;
+}
+.title-block1
+{
+	border-bottom: 3px solid #108876;
+}
+.transperent
+{
+	border-bottom: 3px solid transparent;	
+}
+.title-block2
+{
+    width: 55px;
+    height: 2px;
+	background-color: #fff;
+}
+.title-block3
+{
+    width: 55px;
+    height: 2px;
+	background-color: #108876;
+	margin-bottom: 35px;
+}
+.title-block4
+{
+    width: 55px;
+    border: 1px dashed #0f8471;
+	margin-top: 10px;
+}
+.title-block5
+{
+    width: 55px;
+    border: 1px dashed #0f8471;
+	 margin: 0px auto 25px auto;
+}
+.title-block6
+{
+    width: 40px;
+    border: 1px dashed #0f8471;
+	margin-top: 30px;
+}
+.width
+{
+	width:20%;
+}
+.detail
+{
+	font-size: 10px !important;
+    color: white !important;
+    line-height: unset !important;
+    text-align: unset !important;
+    font-weight: unset !important;
+    padding-top: unset !important;
+}
+@media  (max-width: 600px) {
+	.type1small { display: block !important; }  /* show it on small screens */
+	.type2small { display: block !important; }
+	.line { display: none !important; }
+  }
+  @media (min-width: 0px){
+	.type1small { display: block !important; }  /* show it on small screens */
+	.type2small { display: block !important; }
+	.line { display: none !important; }
+  }
+  
+  @media (min-width: 601px) and (max-width: 1024px) {
+	.type1small { display: none !important; }   /* hide it elsewhere */
+	.type2small { display: none !important; }   /* hide it elsewhere */
+	.line { display: block !important; }
+  }
+  @media (min-width: 601px) {
+	.type1small { display: none !important; }   /* hide it elsewhere */
+	.type2small { display: none !important; } 
+	.line { display: block !important; } 
+  }

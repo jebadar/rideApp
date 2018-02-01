@@ -1,0 +1,25 @@
+<app-pickup-main-new-component *ngIf="state === 'home'"></app-pickup-main-new-component>
+
+<!-- Banner Section Start-->
+<div *ngIf="state !== 'home'" class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="banner-distance-box">
+        <div *ngIf="state != 'profile'" class="col-sm-6 offset-sm-3">
+          <div class="text-center">
+            <div class="banner-h">
+              <h2>{{heading}}</h2>
+            </div>
+
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="banner-h">
+            <h3>{{detail}}</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Banner Section End-->

@@ -1,0 +1,283 @@
+
+/*-------- Quote Page Css Style Start -------- */
+.quote-banner-border
+{
+	width: 100%; height: 8px; background-color: #cc4452;
+}
+.quote-heading h3
+{
+	font-size: 18px; color: #cc4452; letter-spacing: 4px; text-align: center !important; text-transform: uppercase; font-weight: normal; float: none; padding-top: 60px;
+}
+.quote-heading h4
+{
+	font-size: 24px; color: #fff; letter-spacing: 4px; text-align: center !important; text-transform: uppercase; font-weight: 900; float: none; padding: 0px; margin: 0px;
+}
+.quote-heading h5
+{
+	font-size: 22px; color: #0f8471; letter-spacing: 4px; text-align: center !important; text-transform: uppercase; font-weight: 900; float: none; padding: 0px; margin: 0px; padding-bottom: 10px; padding-top: 50px
+}
+.vehicle-heading h4
+{
+	font-size: 14px; color: #1c1c1c; text-transform: none; font-weight: normal; width: 100%; padding: 0px; margin: 0px; letter-spacing: 4px;
+}
+.quote-next-btn-load 
+{
+	background-color:white !important; padding-left: 50px; padding-right: 50px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 16px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; letter-spacing: 2px;
+}
+.vehicle-heading h5
+{
+	font-size: 24px; color: #cc4452; text-transform: none; font-weight: 900; width: 100%; padding: 0px; margin: 0px; text-align: left; padding-top: 10px; letter-spacing: 4px;
+}
+.vehicle-heading h6
+{
+	font-size: 14px; color: #1c1c1c; text-transform: none; font-weight: normal; width: auto; padding: 0px; margin: 0px; text-align: left; padding-top: 10px; letter-spacing: 0px;
+}
+.quote-map
+{
+	max-width: 100%; margin-top: 50px;
+}
+.quote-travel-box
+{
+	width: 100%; background-color: #1c1c1c; padding-top: 30px; padding-bottom: 30px; margin-top: 50px; border-radius: 4px;
+}
+.quote-drop
+{
+	background: none; width: 100%; border: 0px; border-bottom: 1px solid #fff; color: #fff; text-align: left; margin-top: 25px; padding-bottom: 15px; text-transform: uppercase; letter-spacing: 2px;
+}
+.dropup .caret, .navbar-fixed-bottom .dropdown .caret
+{
+	float: right; margin-top: 10px;
+}
+.quote-add-btn
+{
+	background-color: #cc4452; padding-left: 50px; padding-right: 50px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 16px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; margin-top: 37px; letter-spacing: 2px; margin-bottom: 10px; box-shadow: 0px 4px 0px #111111;
+}
+.quote-add-btn:hover
+{
+	background-color: #fff; color: #cc4452;
+}
+.form-control-1
+{
+	height: 65px; border-radius: 0px; margin-top: 17px; color: #fff !important; font-size: 12px; font-weight: normal; letter-spacing: 2px; background: none; border-bottom: 1px solid #fff !important; border: 0px; text-transform: uppercase; width: 100%;
+}
+.summary-bg
+{
+	width: 100%; background-color: #f2f3f7; border: 1px solid #e5e7eb; padding-top: 30px; padding-bottom: 40px; margin-top: 50px;
+}
+.summary-from-box
+{
+	width: 100%; background-color: #0f8471; border-radius: 4px; padding-top: 15px; padding-bottom: 15px; text-align: center; margin-top: 20px;
+}
+.summary-location-box
+{
+	width: 100%; background-color: #fff; border-radius: 4px; padding-top: 15px; padding-bottom: 15px; text-align: center; border: 1px solid #dbdde4; margin-top: 15px;
+}
+.summary-heading h3
+{
+	font-size: 16px; color: #fff; letter-spacing: 2px; text-align: center !important; text-transform: uppercase; font-weight: 900; float: none; padding: 0px; margin: 0px;
+}
+.summary-heading h4
+{
+	font-size: 16px; color: #0f8471; letter-spacing: 2px; text-align: center !important; text-transform: uppercase; font-weight: 900; float: none; padding: 0px; margin: 0px;
+}
+.summary-heading h5
+{
+	font-size: 14px; color: #0f8471; letter-spacing: 2px; text-align: left!important; text-transform: uppercase; font-weight: normal; float: left; padding: 0px; margin: 0px; padding-top: 15px; padding-bottom: 20px; width: 100%;
+}
+.form-control-2
+{
+	height: 50px; border-radius: 0px; color: #272727 !important; font-size: 12px; font-weight: normal; letter-spacing: 2px; border: 1px solid #dbdde4; text-transform: uppercase; width: 100%; padding-left: 20px; padding-right: 20px; border-top-right-radius: 4px; border-bottom-right-radius: 4px;
+}
+.form-control-3
+{
+	height: 50px; border-radius: 4px; color: #272727 !important; font-size: 12px; font-weight: normal; letter-spacing: 2px; border: 1px solid #dbdde4; text-transform: uppercase; width: 100%; padding-left: 20px; padding-right: 20px;
+}
+.input-group-addon
+{
+	padding: 6px 23px; background-color: #0f8571; border: 1px solid #066757;
+}
+.set-margin
+{
+	margin-top: 0px;
+	margin-left: -15px;
+}
+.s-margin
+{
+	margin-top: 5px;
+}
+.quote-next-btn
+{
+	background-color: #0f8471; padding-left: 50px; padding-right: 50px; padding-top: 15px; padding-bottom: 15px; color: white; font-size: 16px; font-weight: 900; text-transform: uppercase; text-align: center; border: 0px; border-radius: 4px; margin-top: 30px; letter-spacing: 2px; box-shadow: 0px 3px 0px #0a6f5f;
+}
+.quote-next-btn:hover
+{
+	background-color: #000; color: #fff; box-shadow: 0px 3px 0px #000;
+}
+.select-car-heading h2
+{
+	font-size: 32px; color: black; letter-spacing: 3px; padding: 0px; margin: 0px; text-transform: uppercase; text-align: center; float: none; font-weight: 900; padding-top: 30px;
+}
+.select-car-heading h3
+{
+	font-size: 18px; color: black; letter-spacing: 3px; padding: 0px; margin: 0px; text-transform: uppercase; text-align: left; font-weight: bold; padding-bottom: 10px;
+}
+.select-car-heading h4
+{
+	font-size: 18px; color: #00735b; letter-spacing: 3px; padding: 0px; margin: 0px; text-transform: uppercase; text-align: left; font-weight: bold; padding-bottom: 0px; padding-top: 10px;
+}
+.select-car-box
+{
+	width: 100%; border: 2px solid #c7c7c7; border-radius: 4px; 
+	padding-top: 10px; padding-bottom: 10px;min-height:100%;
+}
+.marginTop
+{
+	margin-top: 20px;
+}
+.select-car
+{
+	max-width: 100%; margin-top: 10px;
+}
+/*-------- Quote Page Css Style End -------- */
+.title-block1
+{
+    width: 55px;
+    height: 2px;
+    margin: 0px auto 25px auto;
+	background-color: #108876;
+}
+.title-block2
+{
+    width: 55px;
+    height: 2px;
+	background-color: #fff;
+}
+.title-block3
+{
+    width: 55px;
+    height: 2px;
+	background-color: #108876;
+	margin-bottom: 35px;
+}
+.title-block4
+{
+    width: 55px;
+    border: 1px dashed #0f8471;
+	margin-top: 10px;
+}
+.title-block5
+{
+    width: 55px;
+    border: 1px dashed #0f8471;
+	 margin: 0px auto 25px auto;
+}
+.title-block6
+{
+    width: 40px;
+    border: 1px dashed #0f8471;
+	margin-top: 30px;
+}
+.dropdown-toggle::after
+{
+	float: right; margin-top: 9px !important;
+}
+.dropdown-menu
+{
+	letter-spacing: 3px; padding-left: 20px;
+}
+.dropdown-toggle::after
+{
+	float: right; margin-top: -10px;
+}
+.dropdown-menu
+{
+	width: 100%; border-radius: 0px;
+}
+.dropdown-menu > li > a
+{
+	border-bottom: 1px solid #e8e8e8; line-height: 40px;
+}
+.dropup .caret, .navbar-fixed-bottom .dropdown .caret
+{
+	float: right; margin-top: 10px;
+}
+.btn-group, .btn-group-vertical
+{
+	width: 100%;
+}
+.btn-group > .btn:first-child
+{
+	width: 100%; text-align: left; height: 50px; border-radius: 0px; margin-top: 10px; color: #b2b2b2; font-size: 12px; letter-spacing: 2px; background-color: white;
+}
+#auto-complete
+{
+    height: 40px !important;
+}
+#auto-complete .form-control
+{
+    color: black !important;
+}
+.time-padding
+{
+    padding-left: 0px; padding-right: 5px;
+}
+.float-holder
+{
+	float: left;
+}
+.step-active-carBox
+{
+    cursor: pointer;
+ border: 5px solid #108876; 
+ border-radius: 4px;
+}
+.adjust-image2 {
+    max-width: 171px;
+    max-height: 53px;
+}
+.adjust-image1 {
+    max-height: 114px;
+    max-width: 130px;
+}
+.suit-case-icon
+{
+	margin-top: 10px; float: left; margin-right: 10px;
+}
+.insertAfterBtn
+{
+    border: 1px solid #e5e7eb !important; 
+    border-radius: 4px !important; 
+    margin-top: 0px !important;
+    white-space: normal;
+}
+.btn-drop
+{
+	width: 95%;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+}
+.insertAfterList
+{
+    position: absolute; transform: translate3d(0px, 60px, 0px); top: 0px; left: 0px; will-change: transform;
+}
+.minimum-height-input 
+{
+	min-height: 50px !important;
+}
+.detail
+{
+	font-size: 13px !important;
+    color: black !important;
+    line-height: unset !important;
+    text-align: unset !important;
+    font-weight: unset !important;
+    padding-top: unset !important;
+}
+@media (max-width: 320px)  {
+	.inline-grid{
+		display: -webkit-inline-box;
+    text-align: center;
+	}
+	
+}

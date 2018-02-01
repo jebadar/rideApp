@@ -1,0 +1,326 @@
+<app-quote-navigate-component [currentStage]="'quote'"></app-quote-navigate-component>
+
+<div #scrollToDiv class="quote-map">
+  <app-google-map-component [origin]="startLoc" [destination]="endLoc" [waypoint]="waypoints" [changeFunc]="changeFunc"></app-google-map-component>
+</div>
+
+
+<!-- Summary Section Start-->
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="quote-heading">
+        <h5>SUMMARISE YOUR JOUNREY DETAILS</h5>
+        <div class="clear"></div>
+        <div class="title-block5"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="table-responsive">
+  <div class="container" [ngStyle]="{'display':enableResponsive ? 'table':'block'}" style="padding-bottom: 30px;">
+    <div class="row" [ngStyle]="{'display': enableResponsive ? 'table-row':''}">
+      <div class="col-sm-4 " [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-from-box">
+          <div class="summary-heading">
+            <h3>From</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-from-box">
+          <div class="summary-heading">
+            <h3>To</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-from-box" style="padding-left:8px;padding-right:8px">
+          <div class="summary-heading">
+            <h3>Distance</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-from-box" style="padding-left:8px;padding-right:8px">
+          <div class="summary-heading">
+            <h3>Options</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" [ngStyle]="{'display': enableResponsive ? 'table-row':''}" *ngFor="let loc of routeMapArray;let counter=index">
+      <div class="col-sm-4" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-location-box">
+          <div class="summary-heading">
+            <h4>{{loc.from}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-location-box">
+          <div class="summary-heading">
+            <h4>{{loc.to}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div class="summary-location-box" style="padding-left:8px;padding-right:8px">
+          <div class="summary-heading">
+            <h4>{{loc.distance}} {{unitSettings.value}}</h4>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-2" [ngStyle]="{'display': enableResponsive ? 'table-cell':'block'}">
+        <div *ngIf="counter > 0" class="summary-location-box" style="padding-left:8px;padding-right:8px">
+          <div class="summary-heading">
+            <h4 style="cursor: pointer;" (click)="remove(loc.from)">
+              <a>Remove</a>
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-loader-component *ngIf="loading"></app-loader-component>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-5 offset-sm-1">
+      <div class="summary-heading">
+        <h5>JOURNEY TYPE:</h5>
+      </div>
+      <div class="btn-group" dropdown role="group">
+        <button type="button" dropdownToggle class="btn btn-default dropdown-toggle" style="border: 1px solid #e5e7eb; border-radius: 4px; margin-top: 0px;"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span *ngIf="quoteObj.return_trip === 'single_journey'">One Way Journey</span>
+          <span *ngIf="quoteObj.return_trip === 'return_journey'">Return Journey</span>
+          <span *ngIf="quoteObj.return_trip === 'waiting_return_journey'">Wait & Return Journey</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" *dropdownMenu x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 60px, 0px); top: 0px; left: 0px; will-change: transform;">
+          <li (click)="selectJourneyType('single_journey')">
+            <a>One Way Journey</a>
+          </li>
+          <li (click)="selectJourneyType('return_journey')">
+            <a>Return Journey</a>
+          </li>
+          <li (click)="selectJourneyType('waiting_return_journey')">
+            <a>Wait & Return Journey</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-5">
+      <div class="summary-heading">
+        <h5>Date & Time</h5>
+      </div>
+      <!-- <div class="row" style="display:inline;"> -->
+        <!-- <div class="col-sm-2 time-padding float-holder">
+          <input type="number" min="0" max="23" [(ngModel)]="bookingTime.hour" class="form-control margin-adjust minimum-height-input" id="exampleInputEmail1014"
+            aria-describedby="emailHelp" placeholder="HH">
+          <p class="detail">Hours</p>                      
+        </div>
+        <div class="col-sm-2 time-padding float-holder">
+          <input type="number" min="0" max="60" [(ngModel)]="bookingTime.minutes" class="form-control margin-adjust minimum-height-input" id="exampleInputEmail1010"
+            aria-describedby="emailHelp" placeholder="MM">
+          <p class="detail">Mins</p>            
+        </div> -->
+        <div class="col-sm-8 set-margin">
+          <!-- <input type="date" class="form-control-3" placeholder="Time" [(ngModel)]="bookingTime.date" aria-describedby="basic-addon1"> -->
+          <input [(ngModel)]="bookingTime.date" class="form-control-3" [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+          <owl-date-time #dt></owl-date-time>
+        </div>
+      <!-- </div> -->
+
+    </div>
+    <div class="col-sm-5 offset-sm-6" *ngIf="quoteObj.return_trip === 'return_journey'">
+      <div class="summary-heading">
+        <h5>Return Date & Time</h5>
+      </div>
+      <!-- <div class="col-sm-2 time-padding float-holder">
+        <input type="number" min="0" max="23" [(ngModel)]="returnTime.hour" class="form-control margin-adjust minimum-height-input" id="exampleInputEmail1014"
+          aria-describedby="emailHelp" placeholder="HH">
+          <p class="detail">Hours</p>          
+      </div>
+      <div class="col-sm-2 time-padding float-holder">
+        <input type="number" min="0" max="60" [(ngModel)]="returnTime.minutes" class="form-control margin-adjust minimum-height-input" id="exampleInputEmail1010"
+          aria-describedby="emailHelp" placeholder="MM">
+          <p class="detail">Mins</p>
+      </div> -->
+      <div class="input-group col-sm-8 set-margin">
+        <!-- <input type="date" class="form-control-3" placeholder="Time" [(ngModel)]="returnTime.date" aria-describedby="basic-addon1"> -->
+        <input [(ngModel)]="returnTime.date" class="form-control-3" [owlDateTimeTrigger]="dt" [owlDateTime]="dt">
+        <owl-date-time #dt></owl-date-time>
+      </div>
+    </div>
+    <div class="col-sm-5 offset-sm-6" *ngIf="quoteObj.return_trip === 'waiting_return_journey'">
+      <div class="summary-heading">
+        <h5>waiting time</h5>
+      </div>
+      <div class="col-sm-2 time-padding float-holder">
+        <input type="number" min="0" max="23" [(ngModel)]="quoteObj.wait_hour" class="form-control margin-adjust minimum-height-input" id="exampleInputEmail1014"
+          aria-describedby="emailHelp" placeholder="HH">
+          <p class="detail">Hours</p>
+      </div>
+      <div class="col-sm-2 time-padding float-holder">
+        <input type="number" min="0" max="60" [(ngModel)]="quoteObj.wait_minutes" class="form-control margin-adjust minimum-height-input" id="exampleInputEmail1010"
+          aria-describedby="emailHelp" placeholder="MM">
+          <p class="detail">Mins</p>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="quote-heading">
+        <h5>Add another pick-up or drop-off location (optional)</h5>
+        <div class="clear"></div>
+        <div class="title-block5"></div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="summary-heading">
+        <h5>Location TYPE:</h5>
+      </div>
+      <div class="btn-group" dropdown role="group">
+        <button type="button" dropdownToggle class="btn btn-default dropdown-toggle" style="border: 1px solid #e5e7eb; border-radius: 4px; margin-top: 0px;"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span *ngIf="location.description == ''">Location Type</span>
+          <span *ngIf="location.description != ''">{{location.description}}</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" *dropdownMenu x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 60px, 0px); top: 0px; left: 0px; will-change: transform;">
+          <li *ngFor="let type of typesObj;let counter=index" (click)="initLocation(counter)">
+            <a>{{type.description}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="summary-heading">
+        <h5>location:</h5>
+      </div>
+      <div class="btn-group" dropdown role="group" *ngIf="location.description.toLowerCase() !== 'postcode'">
+        <button type="button" dropdownToggle class="btn btn-default dropdown-toggle" style="border: 1px solid #e5e7eb; border-radius: 4px;overflow-x: hidden; margin-top: 0px;"
+          data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span *ngIf="tempAddress === null">Location</span>
+          <span class="btn-drop" *ngIf="tempAddress != null">{{tempAddress.formatted_address}}</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" *dropdownMenu x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 60px, 0px); top: 0px; left: 0px; will-change: transform;">
+          <li>
+            <a *ngIf="location.length < 1">Select Location Type</a>
+          </li>
+          <li *ngFor="let loc of location.locations;let counter=index" (click)="selectLoc(counter)">
+            <a>{{loc.name}}</a>
+          </li>
+        </ul>
+      </div>
+      <div id="auto-complete" *ngIf="location.description.toLowerCase() === 'postcode'">
+        <app-auto-complete-component [key]="'quote'" [setFunc]="set"></app-auto-complete-component>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="summary-heading">
+        <h5>insert after:</h5>
+      </div>
+      <div class="btn-group" dropdown role="group">
+        <button type="button" dropdownToggle class="btn btn-default dropdown-toggle insertAfterBtn" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          <span *ngIf="positionSet === ''">Insert After</span>
+          <span class="btn-drop" *ngIf="positionSet !== ''">{{positionSet}}</span>
+          <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu insertAfterList" *dropdownMenu x-placement="bottom-start">
+          <li *ngFor="let loc of locArray" (click)="selectInsertAfter(loc)">
+            <a>{{loc}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="text-right">
+        <button *ngIf="!loading" type="submit" (click)="update('add','')" class="quote-next-btn">Add</button>
+        <button *ngIf="loading" type="submit" style="background-color:white !important;" class="quote-next-btn">
+          <app-loader-component [width]="20"></app-loader-component>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="select-car-heading">
+        <h2>SELECT VEHICLE</h2>
+      </div>
+    </div>
+    <div class="col-sm-12" *ngIf="loadCars">
+      <app-loader-component></app-loader-component>
+    </div>
+
+    <div *ngFor="let car of cars; let counter=index" (click)="selectCar(car.id)" class="col-sm-4 marginTop">
+      <div [class.step-active-carBox]="car.id === selectedCarId" style="" class="select-car-box">
+        <div class="col-sm-12">
+          <div class="select-car-heading">
+            <h3>{{car.name}}</h3>
+          </div>
+        </div>
+        <div class="clear"></div>
+        <div class="row" style="margin: 0px;">
+          <div class="col-sm-5">
+            <img class="adjust-image1" *ngIf="car.media.length > 0" [src]="car.media[0].name" alt="" />
+            <img *ngIf="car.media.length < 1" [src]="assetsUrl + 'images/select-car-image.jpg'" alt="" />
+          </div>
+          <div class="col-sm-7">
+            <div class="row inline-grid">
+              <div class="col-sm-6">
+                <img class="suit-case-icon" [src]="assetsUrl + 'images/suit-case-icon.png'" alt="">
+                <div class="vehicle-heading">
+                  <h6>{{car.no_of_suitcases}}</h6>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <img class="suit-case-icon" [src]="assetsUrl + 'images/passenger-icon.png'" alt="">
+                <div class="vehicle-heading">
+                  <h6>{{car.no_of_passengers}}</h6>
+                </div>
+              </div>
+            </div>
+            <!-- <img class="suit-case-icon" [src]="assetsUrl + 'images/suit-case-icon.png'" alt="">
+            <div class="vehicle-heading">
+              <h6>{{car.no_of_suitcases}}</h6>
+            </div>
+            <img class="suit-case-icon" [src]="assetsUrl + 'images/passenger-icon.png'" alt="">
+            <div class="vehicle-heading">
+              <h6>{{car.no_of_passengers}}</h6>
+            </div> -->
+            <img class="adjust-image2" *ngIf="car.media.length === 2" [src]="car.media[1].name" alt="" />
+            <img class="select-car" *ngIf="car.media.length !== 2" [src]="assetsUrl + 'images/select-car-1-image.jpg'" alt="" />
+          </div>
+          <div class="col-sm-12">
+            <div class="select-car-heading">
+              <h4 *ngIf="car.mileagecharges.length > 0">Price:{{car.mileagecharges[0].amount}}.00</h4>
+              <h4 *ngIf="car.mileagecharges.length < 1">Price:50.00</h4>
+
+            </div>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="text-right">
+        <button type="submit" *ngIf="!loading_next" (click)="next()" class="quote-next-btn">Next</button>
+        <button *ngIf="loading_next" type="submit" class="quote-next-btn-load">
+          <app-loader-component [width]="50"></app-loader-component>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Summary Section End-->

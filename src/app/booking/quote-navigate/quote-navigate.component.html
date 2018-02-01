@@ -1,0 +1,61 @@
+<!-- Trip Section Start-->
+<div class="container" *ngIf="!enableResponsive">
+    <div class="row">
+      <div class="col-sm-3" style="cursor:pointer;"(click)="navigate('quote')">
+        <div class="text-center" >
+          <img  class="trip-icon" [class.step-active]="currentStage === 'quote'" [src]="assetsUrl + 'images/step-1.png'" alt="" />
+        </div>
+        <div class="clear"></div>
+        <div class="text-center">
+          <div class="trip">
+            <h3>Quote</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3"  style="cursor:pointer;" (click)="navigate('passengers')">
+        <div class="text-center">
+          <img class="trip-icon"  [class.step-active]="currentStage === 'passengers'" [src]="assetsUrl + 'images/strp-2.png'" alt="" />
+        </div>
+        <div class="clear"></div>
+        <div class="text-center">
+          <div class="trip">
+            <h3>Cars & passenger</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3" style="cursor:pointer;" (click)="navigate('summary')">
+        <div class="text-center">
+          <img class="trip-icon"  [class.step-active]="currentStage === 'summary'" [src]="assetsUrl + 'images/step-3.png'" alt="" />
+        </div>
+        <div class="clear"></div>
+        <div class="text-center">
+          <div class="trip">
+            <h3>Booking Summary</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-3" style="cursor:pointer;" (click)="navigate('payment')">
+        <div class="text-center" >
+          <img class="trip-icon"  [class.step-active]="currentStage === 'payment'" [src]="assetsUrl + 'images/step-4.png'" alt="" />
+        </div>
+        <div class="clear"></div>
+        <div class="text-center">
+          <div class="trip">
+            <h3>Payment</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" *ngIf="enableResponsive">
+    <div class="row">
+        <ul class="navbar navbar-expand-lg navbar-light bg-light col-sm-12 responsive-list" >
+            <li style="cursor: pointer;" (click)="navigate('quote')" [class.responsive-list-item]="currentStage === 'quote'" ><a class="anchor-top">1</a></li>
+            <li style="cursor: pointer;" (click)="navigate('passengers')" [class.responsive-list-item]="currentStage === 'passengers'" ><a class="anchor-top">2</a></li>
+            <li style="cursor: pointer;" (click)="navigate('summary')" [class.responsive-list-item]="currentStage === 'summary'"><a class="anchor-top">3</a></li>
+            <li style="cursor: pointer;" (click)="navigate('payment')" [class.responsive-list-item]="currentStage === 'payment'"><a class="anchor-top">4</a></li>
+          </ul>
+    </div>
+
+  </div>
+  <!-- Trip Section End-->

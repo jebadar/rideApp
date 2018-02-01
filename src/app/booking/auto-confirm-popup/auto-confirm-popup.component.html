@@ -1,0 +1,21 @@
+
+<div class="container modal_wrapper" >
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3" (click)="ignoreClick($event)">
+      <div class="login-bg">
+        <div class="login-box">
+          <h1>{{heading}}</h1>
+        </div>
+        <div class="col-12">
+          <form class="padding">
+            <div class="form-group" >
+              <label for="exampleInputEmail1"><h2>{{detail}}</h2></label>
+            </div>
+            <button type="submit" (click)="closeBox()" class="btn btn-primary">Ok</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>

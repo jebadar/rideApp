@@ -1,0 +1,66 @@
+<div class="container modal_wrapper">
+  <div class="row" (click)="closePopup()">
+    <div class="col-sm-6 offset-sm-3">
+      <div class="login-bg" style="margin-top:20px !important;" (click)="ignoreClick($event)">
+        <div class="login-box">
+            <button style="margin-right: 10px;" (click)="closePopup()" type="button" class="close"><span style="color: #fff;">&times;</span></button>          
+            
+          <h1>Edit User</h1>
+        </div>
+
+        <form class="padding" style="padding-top: 0px !important;" (ngSubmit)="f.form.valid && update()" #f="ngForm" novalidate>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label for="exampleInputEmail1">
+                  <h2>Email address</h2>
+                </label>
+                <input type="email" class="form-control"  [(ngModel)]="user.email" [readonly]="true" name="email"
+                  aria-describedby="emailHelp" placeholder="Enter email">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group" [formGroup]="userForm">
+                <label for="exampleInputEmail1">
+                  <h2>Name</h2>
+                </label>
+                <input type="text" class="form-control"  name="name" formControlName="name" aria-describedby="emailHelp"
+                  placeholder="Name">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group" [formGroup]="userForm">
+                <label for="exampleInputEmail1">
+                  <h2>Phone</h2>
+                </label>
+                <input type="text" class="form-control" id="exampleInputEmail1" name="phone" formControlName="phone" aria-describedby="emailHelp"
+                  placeholder="Phone">
+              </div>
+            </div>
+            <div class="col-sm-6"></div>
+            <div class="col-sm-6">
+              <div class="form-group" [formGroup]="userForm">
+                <label for="exampleInputPassword1">
+                  <h2>Password</h2>
+                </label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" formControlName="password">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group" [formGroup]="userForm">
+                <label for="exampleInputPassword1">
+                  <h2>Confirm Password</h2>
+                </label>
+                <input type="password" class="form-control"  placeholder="Password" name="confirmPassword" formControlName="confirmPassword">
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">
+              <span *ngIf="!loading">Save</span>
+              <span *ngIf="loading">Processing</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

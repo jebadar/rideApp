@@ -1,0 +1,71 @@
+<form class="padding" *ngIf="belongs_to !== 'main'" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+  <div class="form-group" [formGroup]="loginForm">
+    <label for="exampleInputEmail1"><div class="login"><h3>Email address</h3></div></label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email" name="email" formControlName="email">
+  </div>
+  <div class="form-group" [formGroup]="loginForm">
+    <label for="exampleInputPassword1"><div class="login"><h3>Password</h3></div></label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" formControlName="password">
+  </div>
+  <button type="submit" class="login-popup-button"><span *ngIf="!loading">Login</span><span *ngIf="loading">Processing</span></button>
+</form>
+
+<div class="container modal_wrapper" *ngIf="belongs_to === 'main'">
+  <div class="row">
+    <div class="col-sm-6 offset-sm-3" (click)="ignoreClick($event)">
+      <div class="login-bg" *ngIf="!reset">
+        <div class="login-box">
+          <h1>Login</h1>
+        </div>
+        <div class="col-12" *ngIf="successSendReset === 'true'">
+          <h3 style="padding-top: 0px;">Email Successfully Sended</h3>
+          <div class="col-12">
+            <div style="background-color: #108876; border-radius: 4px; width: 100%; margin-top: 15px; padding-top: 20px; padding-bottom: 15px; text-align: center;">
+          <h4 style="color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px;">Please follow link send in your email to reset password</h4>
+        </div>
+        </div>
+        </div>
+        <div class="col-12" *ngIf="successSendReset === 'error'">
+          <h3 style="padding-top: 0px;">Error in sending mail</h3>
+          <div style="background-color: #108876; border-radius: 4px; width: 100%; margin-top: 15px; padding-top: 20px; padding-bottom: 15px; text-align: center;">
+              <h4 style="color: #fff; font-size: 14px; text-transform: uppercase; letter-spacing: 2px;">Email does not exist</h4>
+            </div>
+        </div>
+        <div class="col-12">
+          <form class="padding" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+            <div class="form-group" [formGroup]="loginForm">
+              <label for="exampleInputEmail1"><h2>Email address</h2></label>
+              <input type="email" class="form-control" id="exampleInputEmail1" name="email" formControlName="email" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            </div>
+            <div class="form-group" [formGroup]="loginForm">
+              <label for="exampleInputPassword1"><h2>Password</h2></label>
+              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" formControlName="password">
+            </div>
+            <!-- <button type="submit" class="btn btn-primary">Login</button> -->
+            <button type="submit" class="btn btn-primary"><span *ngIf="!loading">Login</span><span *ngIf="loading">Processing</span></button>
+            <button type="submit" style="background-color:#108876" (click)="skip()" class="btn btn-primary">Skip</button>                      
+          </form>
+          <h3 (click)="forgetPassword()"><a >Forget Password</a></h3>
+          <!-- <h6 style="text-align: center;cursor:pointer;">(skip)</h6> -->
+        </div>
+      </div>
+      <div class="login-bg" *ngIf="reset">
+        <div class="login-box">
+          <h1>Reset Password</h1>
+        </div>
+        <div class="col-12">
+          <form class="padding" *ngIf="successSendReset === 'false'" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
+            <div class="form-group" [formGroup]="loginForm">
+              <label for="exampleInputEmail1"><h2>Email address</h2></label>
+              <input type="email" class="form-control" id="exampleInputEmail1" name="email" formControlName="email" aria-describedby="emailHelp"
+                placeholder="Enter email">
+            </div>
+            <button type="submit" class="btn btn-primary"><span *ngIf="!loading">Send</span><span *ngIf="loading">Processing</span></button>
+            <h6 style="text-align: center;cursor:pointer;margin-top: 6px;" (click)="setFlag(false)">cancel</h6>            
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
